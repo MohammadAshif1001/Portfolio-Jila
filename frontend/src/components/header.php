@@ -102,7 +102,7 @@ $bg_color = "slate-950";
         <button class="bg-slate-900 hover:bg-slate-800 active:bg-slate-700 focus:outline-none focus:ring focus:ring-violet-300 rounded-md px-3 py-2 text-cyan-500 font-serif  hover:text-cyan-400 shadow-md mt-10 cursor-pointer">Let's Collaborate and Build Something Amazing</button>
     </div>
     <div class="avatar">
-        <img src="include/img/1.jpg" alt="Man Image">
+        <img src="include/img/man.png" alt="Man Image">
     </div>
 </div>
 <section class="bg-slate-900 flex items-center justify-center p-5"><button class="bg-slate-50 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded inline-flex items-center">
