@@ -2,7 +2,7 @@
 $dbhost = "localhost";
 $dbuser = "root";
 $dbpass = "";
-$dbname = "protfolio-jila";
+$dbname = "protfolio_jila";
 
 $conn = mysqli_connect($dbhost , $dbuser , $dbpass , $dbname);
 
