@@ -1,4 +1,5 @@
 
+
 <section class="py-16">
     <h2 class="text-4xl font-extrabold text-gray-800 text-center mb-8">Our Pricing Services</h2>
 
@@ -27,4 +28,5 @@
         </div>
     </div>
 </section>
+
 

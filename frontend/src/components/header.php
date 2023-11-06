@@ -70,9 +70,9 @@ $bg_color = "slate-950";
 
 <!-- NavStart -->
     <nav class="max-w-screen-xl mx-auto px-4 py-8 flex items-center justify-between space-x-8">
-        <div id="links" class="w-20 h-20 rounded-full">
+        <div id="links" class="w-24 h-24 rounded-full">
             <a href="#" class="flex items-center">
-             <img class="w-full h-full object-cover rounded-full" src="include/img/logo.png" alt="Logo">
+             <img class="w-50 h-50 object-cover rounded-full" src="include/img/logo.png" alt="Logo">
             </a>
         </div>
 <!-- NavLinks -->
@@ -102,10 +102,16 @@ $bg_color = "slate-950";
         <button class="bg-slate-900 hover:bg-slate-800 active:bg-slate-700 focus:outline-none focus:ring focus:ring-violet-300 rounded-md px-3 py-2 text-cyan-500 font-serif  hover:text-cyan-400 shadow-md mt-10 cursor-pointer">Let's Collaborate and Build Something Amazing</button>
     </div>
     <div class="avatar">
+        <!-- <img src="include/img/female-developer.png" alt="Man Image"> -->
         <img src="include/img/man.png" alt="Man Image">
     </div>
 </div>
-<section class="bg-slate-900 flex items-center justify-center p-5"><button class="bg-slate-50 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded inline-flex items-center">
+
+
+<section class="rounded-lg bg-slate-900 flex items-center justify-center p-5">
+
+<button class="bg-slate-50 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded inline-flex items-center">
+    
   <svg class="fill-current w-4 h-4 mr-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M13 8V2H7v6H2l8 8 8-8h-5zM0 18h20v2H0v-2z"/></svg>
   <span>Download Resume</span>
 </button></section>

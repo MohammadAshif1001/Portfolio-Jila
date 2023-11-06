@@ -1,5 +1,4 @@
 <footer class="bg-slate-950 text-white">
-    
     <div class="flex flex-col gap-5 md:flex-row justify-between m-5 space-y-4 sm:space-y-0 sm:space-x-6">
         <div class="w-full sm:w-1/2 md:w-1/4 lg:w-1/5">
             <div class="logo">
