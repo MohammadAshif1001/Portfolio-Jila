@@ -7,21 +7,23 @@
 
 
 <?php 
+include_once("config/config.php");
     if($_SERVER["REQUEST_METHOD"] == "POST" ){
 
         $user_name = $_REQUEST["name"];
+        $user_email = $_REQUEST["mail"];
         $bio = $_REQUEST["bio"];
         $profession = $_REQUEST["prof"];
         $a_bt = $_REQUEST["ab_1"];
         $ab_t = $_REQUEST["ab_2"];
         $cv_l = $_REQUEST["cv"];
-        $date = $_REQUEST["cv"];
+        $date = date("Y/m/d");
 
 
         if( !empty($user_name) && !empty($bio) && !empty($profession)  && !empty($ab_t) && !empty($a_bt) && !empty($cv_l))
         {
             $update_details = "INSERT INTO `users`(`user_name`, `user_email`, `user_bio`, `profesion`, `ab_1`, `ab_2`, `resume_link`, `date`) 
-            VALUES ('$user_name','[value-2]','$bio','$profession','$a_bt','$ab_t','$cv_l','$date')";
+            VALUES ('$user_name','$user_email','$bio','$profession','$a_bt','$ab_t','$cv_l','$date')";
 
             $profile_created = mysqli_query($conn , $update_details);
 
@@ -52,6 +54,11 @@
             <div class="mb-4">
                 <label for="id_name" class="block text-cyan-400 text-sm font-medium">Name</label>
                 <input type="text" id="id_name" name="name" class="mt-2 border w-full focus:ring focus:ring-violet-300 rounded-md px-3 py-2" placeholder="Mohammad Ashif">
+            </div> 
+
+            <div class="mb-4">
+                <label for="id_mail" class="block text-cyan-400 text-sm font-medium">Your Email Id</label>
+                <input type="text" id="id_mail" name="mail" class="mt-2 border w-full focus:ring focus:ring-violet-300 rounded-md px-3 py-2" placeholder="your@gmail.com">
             </div>         
 
 
