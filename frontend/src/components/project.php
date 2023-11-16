@@ -19,7 +19,7 @@
             <!-- End -->
             
             <!-- Project Card -->
-            <div class="bg-slate-900 hover:bg-slate-800 active:bg-slate-700  focus:ring focus:ring-slate-50 rounded-lg p-5 hover:outline text-slate-50 font-serif  hover:text-cyan-400 shadow-md">
+            <div class="bg-slate-900 hover:bg-slate-800 active:bg-slate-700  focus:ring focus:ring-slate-50 rounded-lg p-5  hover:outline text-slate-50 font-serif  hover:text-cyan-400 shadow-md">
                 <div class="content">
                     <h4 class="mb-4 text-xl font-bold">Poject Title</h4>
                         <div class="image mb-4">
