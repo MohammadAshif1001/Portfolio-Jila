@@ -1,6 +1,4 @@
 <?php
-// insert_data.php
-
 session_start(); // Start the session
 $expectedApiKey = 'key';
 
@@ -46,6 +44,16 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $pr_dec = mysqli_real_escape_string($conn, $data['p_dec']);
         $pr_repo = mysqli_real_escape_string($conn, $data['p_repo']);
 
+        $pr_title2 = mysqli_real_escape_string($conn, $data['p_title2']);
+        $pr_img2 = mysqli_real_escape_string($conn, $data['p_img2']);
+        $pr_dec2 = mysqli_real_escape_string($conn, $data['p_dec2']);
+        $pr_repo2 = mysqli_real_escape_string($conn, $data['p_repo2']);
+
+        $pr_title3 = mysqli_real_escape_string($conn, $data['p_title3']);
+        $pr_img3 = mysqli_real_escape_string($conn, $data['p_img3']);
+        $pr_dec3 = mysqli_real_escape_string($conn, $data['p_dec3']);
+        $pr_repo3 = mysqli_real_escape_string($conn, $data['p_repo3']);
+
 
         // For Uniqly Identify table with user Id:)
         $uniq_Id = bin2hex(random_bytes(4));
@@ -66,8 +74,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 
         // Insert data in 'Projects' table
-        $pr_query = $conn->prepare("INSERT INTO `projects`(`un_id`, `pr_tittle`, `pr_desc`, `pr_img`, `pr_repo`) VALUES (?, ?, ?, ?,?)");
-        $pr_query->bind_param("sssss", $uniq_Id, $pr_title, $pr_dec, $pr_img,  $pr_repo);
+        $pr_query = $conn->prepare("INSERT INTO `projects` (`pr_id`, `un_id`, `pr_tittle`, `pr_desc`, `pr_img`, `pr_repo`, `pr_tittle2`, `pr_desc2`, `pr_img2`, `pr_repo2`, `pr_tittle3`, `pr_desc3`, `pr_img3`, `pr_repo3`) VALUES (?, ?, ?, ?,?,?,?,?,?,?,?,?,?)");
+        $pr_query->bind_param("sssssssssssss", $uniq_Id, $pr_title, $pr_dec, $pr_img,  $pr_repo, $pr_title2, $pr_dec2, $pr_img2,  $pr_repo2, $pr_title3, $pr_dec3, $pr_img3,  $pr_repo3);
 
         $inserted_project_details = $pr_query->execute();
 

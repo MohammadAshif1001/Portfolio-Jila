@@ -152,7 +152,7 @@ header("Access-Control-Allow-Headers: Content-Type, API-Key");
     <div v-if="step === 3" class="flex flex-col w-full justify-center items-center">
         <h2 class="text-2xl font-semibold mb-4">Step 3: Your Projects</h2>
         <form @submit.prevent="submitForm" class="bg-slate-950 md:bg-slate-700 p-5 rounded-lg shadow-lg w-full  h-auto flex flex-col justify-center md:w-1/2">
-
+        <h2 class="text-2xl font-bold mb-4">Your Projects 1</h2>
             <div class="mb-4">
                 <label  class="block text-cyan-400 text-sm font-medium">Project Title</label>
                 <input type="text" v-model="formData.p_title" class="mt-2 border w-full focus:ring focus:ring-slate-950 rounded-md px-3 py-2" placeholder="Project Title"  required>
@@ -167,11 +167,52 @@ header("Access-Control-Allow-Headers: Content-Type, API-Key");
                 <label class="block text-cyan-400 text-sm font-medium">Description</label>
                 <textarea v-model="formData.p_dec" class="h-12 mt-2 border w-full focus:ring focus:ring-slate-950 rounded-md px-3 py-2" placeholder="Describe in 10-50 words" required></textarea>
             </div>
+            <div class="mb-4">
+                <label class="block text-cyan-400 text-sm font-medium">Repo Link Or Live Link</label>
+                <input type="text" v-model="formData.p_repo" class="mt-2 border w-full focus:ring focus:ring-slate-950 rounded-md px-3 py-2" placeholder="No Link? Put  #"  required>
+            </div>
+
+            <h2 class="text-2xl font-bold mb-4 text-slate-50">Your Projects 2</h2>
+
+            <div class="mb-4">
+                <label  class="block text-cyan-400 text-sm font-medium">Project Title</label>
+                <input type="text" v-model="formData.p_title2" class="mt-2 border w-full focus:ring focus:ring-slate-950 rounded-md px-3 py-2" placeholder="Project Title"  required>
+            </div>
+            
+            <div class="mb-4">
+                <label  class="block text-cyan-400 text-sm font-medium">Project Img</label>
+                <input type="text" v-model="formData.p_img2" class="mt-2 border w-full focus:ring focus:ring-slate-950 rounded-md px-3 py-2" placeholder="Image Link"  required>
+            </div>
+            
+            <div class="mb-4">
+                <label class="block text-cyan-400 text-sm font-medium">Description</label>
+                <textarea v-model="formData.p_dec2" class="h-12 mt-2 border w-full focus:ring focus:ring-slate-950 rounded-md px-3 py-2" placeholder="Describe in 10-50 words" required></textarea>
+            </div>
+            <div class="mb-4">
+                <label class="block text-cyan-400 text-sm font-medium">Repo Link Or Live Link</label>
+                <input type="text" v-model="formData.p_repo2" class="mt-2 border w-full focus:ring focus:ring-slate-950 rounded-md px-3 py-2" placeholder="No Link? Put  #"  required>
+            </div>
+
+            <h2 class="text-2xl font-bold mb-4  text-slate-50">Your Projects 3</h2>
+            <div class="mb-4">
+                <label  class="block text-cyan-400 text-sm font-medium">Project Title</label>
+                <input type="text" v-model="formData.p_title3" class="mt-2 border w-full focus:ring focus:ring-slate-950 rounded-md px-3 py-2" placeholder="Project Title"  required>
+            </div>
+            
+            <div class="mb-4">
+                <label  class="block text-cyan-400 text-sm font-medium">Project Img</label>
+                <input type="text" v-model="formData.p_img3" class="mt-2 border w-full focus:ring focus:ring-slate-950 rounded-md px-3 py-2" placeholder="Image Link"  required>
+            </div>
+            
+            <div class="mb-4">
+                <label class="block text-cyan-400 text-sm font-medium">Description</label>
+                <textarea v-model="formData.p_dec3" class="h-12 mt-2 border w-full focus:ring focus:ring-slate-950 rounded-md px-3 py-2" placeholder="Describe in 10-50 words" required></textarea>
+            </div>
 
 
             <div class="mb-4">
                 <label class="block text-cyan-400 text-sm font-medium">Repo Link Or Live Link</label>
-                <input type="text" v-model="formData.p_repo" class="mt-2 border w-full focus:ring focus:ring-slate-950 rounded-md px-3 py-2" placeholder="No Link? Put  #"  required>
+                <input type="text" v-model="formData.p_repo3" class="mt-2 border w-full focus:ring focus:ring-slate-950 rounded-md px-3 py-2" placeholder="No Link? Put  #"  required>
             </div>
             
             <button type="submit" class="bg-slate-900 hover:bg-slate-800 active:bg-slate-700 focus:outline-none focus:ring focus:ring-slate-950 rounded-md px-3 py-2 text-cyan-500 font-serif  hover:text-cyan-400 shadow-md mt-10 cursor-pointer">Submit</button>
@@ -207,8 +248,15 @@ header("Access-Control-Allow-Headers: Content-Type, API-Key");
                 p_title: '',
                 p_img: '',
                 p_dec: '',
-                p_repo: ''
-
+                p_repo: '',
+                p_title2: '',
+                p_img2: '',
+                p_dec2: '',
+                p_repo2: '',
+                p_title3: '',
+                p_img3: '',
+                p_dec3: '',
+                p_repo3: ''
             }
         },
            
@@ -247,7 +295,15 @@ header("Access-Control-Allow-Headers: Content-Type, API-Key");
                     p_title: this.formData.p_title,
                     p_img: this.formData.p_img,
                     p_dec: this.formData.p_dec,
-                    p_repo: this.formData.p_repo
+                    p_repo: this.formData.p_repo,
+                    p_title2: this.formData.p_title2,
+                    p_img2: this.formData.p_img2,
+                    p_dec2: this.formData.p_dec2,
+                    p_repo2: this.formData.p_repo2,
+                    p_title3: this.formData.p_title3,
+                    p_img3: this.formData.p_img3,
+                    p_dec3: this.formData.p_dec3,
+                    p_repo3: this.formData.p_repo3
                 };
                 const apiKey = 'key';
                 // Use fetch or another AJAX library to send data to the server
@@ -288,7 +344,15 @@ header("Access-Control-Allow-Headers: Content-Type, API-Key");
                         p_title: '',
                         p_img: '',
                         p_dec: '',
-                        p_repo: ''
+                        p_repo: '',
+                        p_title2: '',
+                        p_img2: '',
+                        p_dec2: '',
+                        p_repo2: '',
+                        p_title3: '',
+                        p_img3: '',
+                        p_dec3: '',
+                        p_repo3: ''
                         // Add more fields as needed
                     };
                 })
