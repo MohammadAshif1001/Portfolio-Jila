@@ -1,7 +1,7 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   // Specify the files to scan for Tailwind CSS classes
-  content: ["./src/**/*.{html,js,php}", "./create-your-profile/**/*.{html,js,php}"],
+  content: ["./src/**/*.{html,js,php}","./create-your-portfolio/**/*.{html,js,php}"],
   
   // Customize your theme and extend variants
   theme: {
