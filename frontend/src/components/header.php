@@ -80,10 +80,10 @@ $bg_color = "slate-950";
 <div id="particles" class="absolute w-full h-full top-0 left-0 z-[-10] opacity-50"></div>
 
 <!-- NavStart -->
-    <nav class="max-w-screen-xl mx-auto px-4 py-6 flex items-center justify-between space-x-8">
+    <nav class="max-w-screen-xl mx-auto px-4 pb-8 flex items-center justify-between space-x-8">
         <div id="links" class="w-24 h-24 rounded-full">
             <a href="#" class="flex items-center">
-             <img class="w-50 h-50  py-3 object-cover rounded-full" src="include/img/portfoliojila.png" alt="Logo">
+             <img class="w-50 h-50  py-4 object-cover rounded-full" src="include/img/portfoliojila.png" alt="Logo">
             </a>
         </div>
 <!-- NavLinks -->
