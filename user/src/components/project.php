@@ -20,7 +20,7 @@ if($projects){
             <?php echo $project['pr_desc'];?>
             </p>
         </div>
-        <button class="mt-8 bg-slate-700 hover:bg-slate-950 active:bg-slate-950 focus:outline-none focus:ring focus:ring-violet-300 rounded-md px-3 py-2 text-cyan-500 font-serif hover:text-cyan-400 shadow-md w-full cursor-pointer ">Join Now</button>
+        <button class="mt-8 bg-slate-700 hover:bg-slate-950 active:bg-slate-950 focus:outline-none focus:ring focus:ring-violet-300 rounded-md px-3 py-2 text-cyan-500 font-serif hover:text-cyan-400 shadow-md w-full cursor-pointer ">Preview</button>
     </div>
     <!-- End -->
     <!-- Project Card -->
@@ -35,7 +35,7 @@ if($projects){
             <?php echo $project['pr_desc2'];?>
             </p>
         </div>
-        <button class="mt-8 bg-slate-700 hover:bg-slate-950 active:bg-slate-950 focus:outline-none focus:ring focus:ring-violet-300 rounded-md px-3 py-2 text-cyan-500 font-serif hover:text-cyan-400 shadow-md w-full cursor-pointer ">Join Now</button>
+        <button class="mt-8 bg-slate-700 hover:bg-slate-950 active:bg-slate-950 focus:outline-none focus:ring focus:ring-violet-300 rounded-md px-3 py-2 text-cyan-500 font-serif hover:text-cyan-400 shadow-md w-full cursor-pointer ">Preview</button>
     </div>
     <!-- End -->
     <!-- Project Card -->
@@ -50,7 +50,7 @@ if($projects){
             <?php echo $project['pr_desc3'];?>
             </p>
         </div>
-        <button class="mt-8 bg-slate-700 hover:bg-slate-950 active:bg-slate-950 focus:outline-none focus:ring focus:ring-violet-300 rounded-md px-3 py-2 text-cyan-500 font-serif hover:text-cyan-400 shadow-md w-full cursor-pointer ">Join Now</button>
+        <button class="mt-8 bg-slate-700 hover:bg-slate-950 active:bg-slate-950 focus:outline-none focus:ring focus:ring-violet-300 rounded-md px-3 py-2 text-cyan-500 font-serif hover:text-cyan-400 shadow-md w-full cursor-pointer ">Preview</button>
     </div>
     <!-- End -->
 <?php

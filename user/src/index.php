@@ -10,6 +10,8 @@ if ($user_data) {
     $data = mysqli_fetch_assoc($result);
     $usr_name =  $data['user_name'];
     $user_email =  $data['user_email'];
+    $user_mob =  $data['m_no'];
+    $user_add =  $data['address'];
     $bio = $data['user_bio'];
     $profession =  $data['profesion'];
     $a_bt = $data['ab_1'];

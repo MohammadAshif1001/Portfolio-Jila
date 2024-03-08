@@ -13,19 +13,19 @@
                             <button class="bg-gradient-to-r from-purple-600 via-purple-400 to-blue-500 text-white w-6 h-6 border-1 rounded-full text-sm hover:text-white">
                                 <i class="fab fa fa-phone"></i>
                             </button>
-                            <span class="ml-2 text-gray-400 text-xs md:text-md  font-medium">+91 9696841096</span>
+                            <span class="ml-2 text-gray-400 text-xs md:text-md  font-medium"><?php echo $user_mob;?></span>
                         </div>
                         <div class="ml-4 md:ml-8 my-8">
                             <button class="bg-gradient-to-r from-purple-600 via-purple-400 to-blue-500 text-white w-6 h-6 border-1 rounded-full text-sm hover:text-white">
                                 <i class="fab fa fa-envelope"></i>
                             </button>
-                            <span class="ml-2 text-gray-400 text-xs md:text-md font-medium">mohammadashif1000@gmail.com</span>
+                            <span class="ml-2 text-gray-400 text-xs md:text-md font-medium"><?php echo $user_email;?></span>
                         </div>
                         <div class="ml-4 md:ml-8 my-8">
                             <button class="bg-gradient-to-r from-purple-600 via-purple-400 to-blue-500 text-white w-6 h-6 border-1 rounded-full text-sm hover:text-white">
                                 <i class="fab fa fa-map-marker-alt"></i>
                             </button>
-                            <span class="ml-2 text-gray-400 text-xs md:text-md  font-medium">Lucknow Uttar Pradesh (India) </span>
+                            <span class="ml-2 text-gray-400 text-xs md:text-md  font-medium"><?php echo $user_add;?></span>
                         </div>
                     </div>
                 </div>
