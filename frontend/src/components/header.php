@@ -1,8 +1,3 @@
-<?php
-$usr_name = "Mohammad Ashif";
-$bg_color = "slate-950";
-
-?>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,20 +7,14 @@ $bg_color = "slate-950";
 
     <script src="https://unpkg.com/@popperjs/core@2/dist/umd/popper.min.js"></script>
     <script src="https://unpkg.com/tippy.js@6/dist/tippy-bundle.umd.js"></script>
-  
-    <link
-      rel="stylesheet"
-      href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
-      integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm"
-      crossorigin="anonymous"
-    />
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous" />
 
     <title><?php echo $usr_name; ?> Creative Portfolio | Portfolio Jila</title>
 </head>
 <style>
-    
-     /* animation section  */
-     @keyframes typing {
+    /* animation section  */
+    @keyframes typing {
         from {
             width: 0;
         }
@@ -42,8 +31,9 @@ $bg_color = "slate-950";
         margin-right: 5px;
         animation: typing 3s steps(40) infinite;
     }
+
     /* typing animation section ending  */
-    
+
 
     .hover-underline-animation {
         display: inline-block;
@@ -68,25 +58,24 @@ $bg_color = "slate-950";
         transform-origin: bottom left;
     }
 
-    .blur{
-    position: absolute;
-    box-shadow: 0 0 1000px 50px #1d4ed8;
-    z-index: -100;
-}
-
+    .blur {
+        position: absolute;
+        box-shadow: 0 0 1000px 50px #1d4ed8;
+        z-index: -100;
+    }
 </style>
 
 <body class="bg-slate-950 scroll-smooth">
-<div id="particles" class="absolute w-full h-full top-0 left-0 z-[-10] opacity-50"></div>
+    <div id="particles" class="absolute w-full h-full top-0 left-0 z-[-10] opacity-50"></div>
 
-<!-- NavStart -->
+    <!-- NavStart -->
     <nav class="max-w-screen-xl mx-auto px-4 pb-8 flex items-center justify-between space-x-8">
         <div id="links" class="w-24 h-24 rounded-full">
             <a href="#" class="flex items-center">
-             <img class="w-50 h-50  py-4 object-cover rounded-full" src="include/img/portfoliojila.png" alt="Logo">
+                <img class="w-50 h-50  py-4 object-cover rounded-full" src="include/img/portfoliojila.png" alt="Logo">
             </a>
         </div>
-<!-- NavLinks -->
+        <!-- NavLinks -->
         <ul class="text-cyan-400 font-semibold space-x-6 hidden md:flex z-20 cursor-pointer">
             <li class="hover-underline-animation"><a href="#">Wellcome</a></li>
             <li id="Resume" class="hover-underline-animation"><a href="#">Resume</a></li>
@@ -94,32 +83,25 @@ $bg_color = "slate-950";
             <li id="Service" class="hover-underline-animation"><a href="#">Service</a></li>
             <li id="Contact" class="hover-underline-animation"><a href="#">Say Hii!</a></li>
         </ul>
-        
+
         <button class="bg-slate-900 hover:bg-slate-800 active:bg-slate-700 focus:outline-none focus:ring focus:ring-violet-300 rounded-md px-3 py-2 text-cyan-500 font-serif  hover:text-cyan-400 shadow-md cursor-pointer">Hire Me</button>
     </nav>
-<!-- Nav End -->
+    <!-- Nav End -->
 
 
-<div class="md:flex md:justify-between items-center">
-    <div class="content px-4">
-        <h4 class="mb-5 text-white text-md font-medium">Your Creative Vision, My Technical Expertise</h4>
-        <span class="blur"></span>
+    <div class="md:flex md:justify-between items-center">
+        <div class="content px-4">
+            <h4 class="mb-5 text-white text-md font-medium"><?php echo $bio; ?></h4>
             <span class="blur"></span>
-        <h1 class="mb-8 text-slate-50 text-2xl md:text-6xl font-medium">Hi, I'm <span class="text-cyan-400"><?php echo $usr_name;?></span>,<br><span class="typing-animation">Full-Stack Developer</span></h1>
-        <p class="mt-5 text-gray-400">
-        Web development is not just my job; it's my creative outlet. I'm here to build robust and user-friendly websites that leave a lasting impression.
-<span class="text-cyan-400">My journey is all about turning concepts into code. I take pride in solving complex challenges, delivering top-notch websites, and exceeding expectations.</span>
-        </p>
-        <button class="bg-slate-900 hover:bg-slate-800 active:bg-slate-700 focus:outline-none focus:ring focus:ring-violet-300 rounded-md px-3 py-2 text-cyan-500 font-serif  hover:text-cyan-400 shadow-md mt-10 cursor-pointer">Let's Collaborate and Build Something Amazing</button>
+            <span class="blur"></span>
+            <h1 class="mb-8 text-slate-50 text-2xl md:text-6xl font-medium">Hi, I'm <span class="text-cyan-400"><?php echo $usr_name; ?></span>,<br><span class="typing-animation"><?php echo $profession; ?></span></h1>
+            <p class="mt-5 text-gray-400">
+                <?php echo $a_bt; ?> <span class="text-cyan-400"><?php echo $ab_t; ?></span>
+            </p>
+            <button class="bg-slate-900 hover:bg-slate-800 active:bg-slate-700 focus:outline-none focus:ring focus:ring-violet-300 rounded-md px-3 py-2 text-cyan-500 font-serif  hover:text-cyan-400 shadow-md mt-10 cursor-pointer">Let's Collaborate and Build Something Amazing</button>
+        </div>
+        <div class="avatar">
+            <!-- <img src="include/img/female-developer.png" alt="Man Image"> -->
+            <img src="include/img/man.png" alt="Man Image">
+        </div>
     </div>
-    <div class="avatar">
-        <!-- <img src="include/img/female-developer.png" alt="Man Image"> -->
-        <img src="include/img/man.png" alt="Man Image">
-    </div>
-</div>
-
-
-
-
-
-

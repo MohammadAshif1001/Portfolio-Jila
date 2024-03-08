@@ -3,47 +3,58 @@
 <div class="grid grid-cols-4 gap-4 md:flex md:justify-between">
 
 
-
-
-
+  
   <!--Linkedin Button-->
   <button id="linkedin" class="bg-white transform hover:-translate-y-3  border-2 w-12 h-12 rounded-full duration-500 text-blue-500 border-blue-500  hover:bg-blue-500 hover:text-white text-2xl">
+    <a   href="<?php echo $linkdIn; ?>">
     <i class="fab fa-linkedin-in"></i>
+    </a>
   </button>
 
    <!--Github Button-->
 <button id="github" class="bg-white transform hover:-translate-y-3  border-2 w-12 h-12 rounded-full duration-500 text-black border-black hover:bg-black hover:text-white text-2xl">
+  <a   href="<?php echo $gitHub; ?>">
    <i class="fab fa-github"></i>
+   </a>
   </button>
 
 
   <!--İnstagram Button -->
   <button id="instagram" class=" border-2 hover:border-0 border-pink-500 bg-gradient-to-b text-2xl hover:from-indigo-600 hover:via-pink-600 hover:to-yellow-500 min-w-wull hover:text-white bg-white text-pink-600 w-12 h-12  transform hover:-translate-y-3 rounded-full duration-500 ">
+    <a   href="<?php echo $insta; ?>">
     <i class="fab fa-instagram"></i>
+    </a>
   </button>
 
 
  <!--Twitter Button -->
  <button id="twitter" class="bg-white  transform hover:-translate-y-3  border-2 w-12 h-12 rounded-full duration-500 text-blue-400 border-blue-400 hover:bg-blue-400 hover:text-white text-2xl">
-   
+   <a   href="<?php echo $x; ?>">
     <i class="fab fa-twitter"></i>
+    </a>
   </button>
 
   <!--Facebook Button -->
 
   <button id="facebook" class="bg-white   duration-500 border-2 border-blue-600   w-12 transform hover:-translate-y-3   h-12 text-2xl rounded-full hover:bg-blue-600 hover:text-white text-blue-600 ">
+    <a   href="<?php echo $fb; ?>">
       <i class="fab fa-facebook-f"></i>
+      </a>
   </button>
 
   <!--Telegram Button -->
   <button id="telegram" class="bg-white  transform hover:-translate-y-3  border-2 w-12 h-12 rounded-full duration-500 text-blue-400 border-blue-400 hover:bg-blue-400 hover:text-white text-2xl">
+    <a   href="<?php echo $tg; ?>">
     <i class="fab fa-telegram-plane"></i>
+    </a>
   </button>
  
 
   <!--Whatsapp Button -->
   <button id="whatsapp" class="bg-white duration-500    w-12 h-12 border-2 rounded-full border-green-600 transform hover:-translate-y-3  text-2xl text-green-500 hover:bg-green-600 hover:text-white">
+    <a   href="<?php echo $whatsapp; ?>">
     <i class="fab fa-whatsapp"></i>
+    </a>
   </button>
 
 
@@ -52,7 +63,9 @@
    
   <!--YouTube Button -->
   <button id="youtube" class="bg-white transform hover:-translate-y-3  border-2 w-12 h-12 rounded-full duration-500 text-red-500 border-red-500 hover:bg-red-500 hover:text-white text-2xl">
+    <a   href="<?php echo $yt; ?>">
     <i class="fab fa-youtube"></i>
+    </a>
   </button>
 
    <!--Snapchat Button-->
@@ -64,7 +77,9 @@
 
   <!--Pinterest Button -->
   <button id="pinterest" class="bg-white transform hover:-translate-y-3  border-2 w-12 h-12 rounded-full duration-500 text-red-500 border-red-500 hover:bg-red-500 hover:text-white text-2xl">
+  <a   href="<?php echo $pintrest; ?>">
     <i class="fab fa-pinterest-p"></i>
+    </a>
   </button>
 
   <!--Spotify Button -->
@@ -74,13 +89,17 @@
 
   <!--Discord Button -->
   <button id="discord" class="bg-white transform hover:-translate-y-3  border-2 w-12 h-12 rounded-full duration-500 text-indigo-500 border-indigo-500 hover:bg-indigo-500 hover:text-white text-2xl">
+    <a  href="<?php echo $disc; ?>">
     <i class="fab fa-discord"></i>
+    </a>
   </button>
 
 
   <!--Reddit Button -->
   <button id="reddit" class="bg-white transform hover:-translate-y-3  border-2 w-12 h-12 rounded-full duration-500 text-yellow-600 border-yellow-600 hover:bg-yellow-600 hover:text-white text-2xl">
+    <a  href="<?php echo $redit; ?>">
     <i class="fab fa-reddit-alien"></i>
+    </a>
   </button>
 
    <!--Google Plus Button -->
@@ -102,8 +121,6 @@
   
 </div>
 <span class="blur"></span>
-
-
  
   <script>
     tippy('#facebook',{
@@ -220,7 +237,7 @@
                         <path d="M13 9L9 13M9 13L5 9M9 13V1" stroke="#F2F2F2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                         <path d="M1 17V18C1 18.7956 1.31607 19.5587 1.87868 20.1213C2.44129 20.6839 3.20435 21 4 21H14C14.7956 21 15.5587 20.6839 16.1213 20.1213C16.6839 19.5587 17 18.7956 17 18V17" stroke="#F2F2F2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                     </svg>
-                    <div class="button-copy uppercase">Download Resume</div>
+                    <div class="button-copy uppercase"><a href="<?php echo $cv_l; ?>">Download Resume </a></div>
                 </div>
             </button>
         </div>
@@ -229,7 +246,7 @@
 
     </section>
 
-    <script>
+    <!-- <script>
         const downloadButton = document.getElementById('downloadButton');
 
         downloadButton.addEventListener('click', () => {
@@ -247,4 +264,4 @@
         downloadButton.addEventListener('mouseout', () => {
             downloadButton.classList.remove('scale-105');
         });
-    </script>
+    </script> -->
