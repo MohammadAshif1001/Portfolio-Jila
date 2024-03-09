@@ -1,4 +1,4 @@
-<section class="rounded-lg bg-slate-950 p-5">
+<section class="rounded-lg bg-slate-950 p-5" id="download-cv">
 <div class="flex items-center justify-center">
 <div class="grid grid-cols-4 gap-4 md:flex md:justify-between">
 

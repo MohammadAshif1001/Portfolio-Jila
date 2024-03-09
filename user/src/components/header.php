@@ -1,4 +1,4 @@
-<html>
+<html class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -79,10 +79,10 @@
         <!-- NavLinks -->
         <ul class="text-cyan-400 font-semibold space-x-6 hidden md:flex z-20 cursor-pointer">
             <li class="hover-underline-animation"><a href="#">Wellcome</a></li>
-            <li id="Resume" class="hover-underline-animation"><a href="#">Resume</a></li>
-            <li id="Project" class="hover-underline-animation"><a href="#">Projects</a></li>
-            <li id="Service" class="hover-underline-animation"><a href="#">Service</a></li>
-            <li id="Contact" class="hover-underline-animation"><a href="#">Say Hii!</a></li>
+            <li id="Resume" class="hover-underline-animation"><a href="#download-cv">Resume</a></li>
+            <li id="Project" class="hover-underline-animation"><a href="#projects">Projects</a></li>
+            <li id="Service" class="hover-underline-animation"><a href="#service">Service</a></li>
+            <li id="Contact" class="hover-underline-animation"><a href="#contact-us">Say Hii!</a></li>
         </ul>
 
         <button class="bg-slate-900 hover:bg-slate-800 active:bg-slate-700 focus:outline-none focus:ring focus:ring-violet-300 rounded-md px-3 py-2 text-cyan-500 font-serif  hover:text-cyan-400 shadow-md cursor-pointer"><a href="<?php echo $whatsapp; ?>">Hire Me</a></button>

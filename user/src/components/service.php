@@ -1,6 +1,6 @@
 
 
-<section class="py-16">
+<section class="py-16" id="service">
     <h2 class="text-4xl font-extrabold text-gray-800 text-center mb-8">Our Pricing Services</h2>
 
     <div class="m-5 flex flex-col md:flex-row justify-center items-center space-y-4 md:space-y-0 md:space-x-8">

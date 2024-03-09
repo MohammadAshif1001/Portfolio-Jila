@@ -1,4 +1,4 @@
-<section>
+<section id="contact-us">
     <div id="app" class="flex items-center gap-5 pt-10 min">
         <div class="m-w-fit mx-auto relative overflow-hidden z-10 bg-slate-850 p-8 rounded-lg shadow-md before:w-24 before:h-24 before:absolute before:bg-purple-600 before:rounded-full before:-z-10 before:blur-2xl after:w-32 after:h-32 after:absolute after:bg-sky-400 after:rounded-full after:-z-10 after:blur-xl after:top-24 after:-right-12">
             <div class="contact-us flex flex-wrap justify-evenly gap-20 md:gap-x-40">
@@ -47,7 +47,7 @@
                         </div>
 
                         <div class="flex justify-center">
-                            <button class="bg-gradient-to-r from-purple-600 via-purple-400 to-blue-500 text-white px-4 py-2 font-bold rounded-md hover:opacity-80 mt-4" type="submit">Send Message</button>
+                            <button class="mt-6 bg-slate-700 hover:bg-slate-900 active:bg-slate-950 focus:outline-none focus:ring focus:ring-violet-300 rounded-md px-3 py-2 text-cyan-500 font-serif hover:text-cyan-400 shadow-md w-auto cursor-pointer" type="submit">Send Message</button>
                         </div>
                     </form>
                 </div>
