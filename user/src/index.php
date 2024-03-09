@@ -33,6 +33,7 @@ if ($social_links) {
     $gitHub = $link['g_h'];
     $redit =  $link['r_d'];
     $pintrest =  $link['p_s'];
+    $tg = $link['t_g'];
 }
 
 
