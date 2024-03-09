@@ -33,21 +33,21 @@
                     <form method="#" action="#">
                         <div class="mb-4">
                             <label class="block text-sm font-medium text-gray-300" for="name">Full Name</label>
-                            <input class="mt-1 p-2 w-full bg-gray-600 border border-gray-400  rounded-md text-white focus:outline-none" type="text" id="name" name="name">
+                            <input class="mt-1 p-2 w-full bg-slate-900 border border-cyan-400  rounded-md text-white focus:outline-none" type="text" id="name" name="name">
                         </div>
 
                         <div class="mb-4">
                             <label class="block text-sm font-medium text-gray-300" for="email">Email Address</label>
-                            <input class="mt-1 p-2 w-full bg-gray-600 border border-gray-400  rounded-md text-white focus:outline-none" type="email" id="email" name="email">
+                            <input class="mt-1 p-2 w-full bg-slate-900 border border-cyan-400  rounded-md text-white focus:outline-none" type="email" id="email" name="email">
                         </div>
 
                         <div class="mb-4">
                             <label class="block text-sm font-medium text-gray-300" for="msg">Message</label>
-                            <textarea class="mt-1 p-2 w-full bg-gray-600 border border-gray-400 rounded-md text-white focus:outline-none" rows="3" id="bio" name="msg"></textarea>
+                            <textarea class="mt-1 p-2 w-full bg-slate-900 border border-cyan-400 rounded-md text-white focus:outline-none" rows="3" id="bio" name="msg"></textarea>
                         </div>
 
                         <div class="flex justify-center">
-                            <button class="bg-gradient-to-r from-purple-600 via-purple-400 to-blue-500 text-white px-4 py-2 font-bold rounded-md hover:opacity-80" type="submit">Send Message</button>
+                            <button class="bg-gradient-to-r from-purple-600 via-purple-400 to-blue-500 text-white px-4 py-2 font-bold rounded-md hover:opacity-80 mt-4" type="submit">Send Message</button>
                         </div>
                     </form>
                 </div>
