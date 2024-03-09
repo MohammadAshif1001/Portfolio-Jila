@@ -13,19 +13,19 @@
                             <button class="bg-gradient-to-r from-purple-600 via-purple-400 to-blue-500 text-white w-6 h-6 border-1 rounded-full text-sm hover:text-white">
                                 <i class="fab fa fa-phone"></i>
                             </button>
-                            <span class="ml-2 text-gray-400 text-xs md:text-md  font-medium">+91 9696841096</span>
+                            <span class="ml-2 text-gray-400 text-xs md:text-md  font-medium"><?php echo $user_mob;?></span>
                         </div>
                         <div class="ml-4 md:ml-8 my-8">
                             <button class="bg-gradient-to-r from-purple-600 via-purple-400 to-blue-500 text-white w-6 h-6 border-1 rounded-full text-sm hover:text-white">
                                 <i class="fab fa fa-envelope"></i>
                             </button>
-                            <span class="ml-2 text-gray-400 text-xs md:text-md font-medium">mohammadashif1000@gmail.com</span>
+                            <span class="ml-2 text-gray-400 text-xs md:text-md font-medium"><?php echo $user_email;?></span>
                         </div>
                         <div class="ml-4 md:ml-8 my-8">
                             <button class="bg-gradient-to-r from-purple-600 via-purple-400 to-blue-500 text-white w-6 h-6 border-1 rounded-full text-sm hover:text-white">
                                 <i class="fab fa fa-map-marker-alt"></i>
                             </button>
-                            <span class="ml-2 text-gray-400 text-xs md:text-md  font-medium">Lucknow Uttar Pradesh (India) </span>
+                            <span class="ml-2 text-gray-400 text-xs md:text-md  font-medium"><?php echo $user_add;?></span>
                         </div>
                     </div>
                 </div>
@@ -33,21 +33,21 @@
                     <form method="#" action="#">
                         <div class="mb-4">
                             <label class="block text-sm font-medium text-gray-300" for="name">Full Name</label>
-                            <input class="mt-1 p-2 w-full bg-gray-600 border border-gray-400  rounded-md text-white focus:outline-none" type="text" id="name" name="name">
+                            <input class="mt-1 p-2 w-full bg-slate-900 border border-cyan-400  rounded-md text-white focus:outline-none" type="text" id="name" name="name">
                         </div>
 
                         <div class="mb-4">
                             <label class="block text-sm font-medium text-gray-300" for="email">Email Address</label>
-                            <input class="mt-1 p-2 w-full bg-gray-600 border border-gray-400  rounded-md text-white focus:outline-none" type="email" id="email" name="email">
+                            <input class="mt-1 p-2 w-full bg-slate-900 border border-cyan-400  rounded-md text-white focus:outline-none" type="email" id="email" name="email">
                         </div>
 
                         <div class="mb-4">
                             <label class="block text-sm font-medium text-gray-300" for="msg">Message</label>
-                            <textarea class="mt-1 p-2 w-full bg-gray-600 border border-gray-400 rounded-md text-white focus:outline-none" rows="3" id="bio" name="msg"></textarea>
+                            <textarea class="mt-1 p-2 w-full bg-slate-900 border border-cyan-400 rounded-md text-white focus:outline-none" rows="3" id="bio" name="msg"></textarea>
                         </div>
 
                         <div class="flex justify-center">
-                            <button class="bg-gradient-to-r from-purple-600 via-purple-400 to-blue-500 text-white px-4 py-2 font-bold rounded-md hover:opacity-80" type="submit">Send Message</button>
+                            <button class="bg-gradient-to-r from-purple-600 via-purple-400 to-blue-500 text-white px-4 py-2 font-bold rounded-md hover:opacity-80 mt-4" type="submit">Send Message</button>
                         </div>
                     </form>
                 </div>

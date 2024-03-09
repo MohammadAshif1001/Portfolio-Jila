@@ -65,46 +65,80 @@
 
         $inserted_social_links = $social_links->execute();
 
+
+        // Assuming $conn is your MySQLi database connection
+
         if (isset($_POST['project'])) {
-            $title = mysqli_real_escape_string($conn, $data['tittle']);
-            $description = mysqli_real_escape_string($conn, $data['descrip']);
-            $fe = mysqli_real_escape_string($conn, $data['frontE']);
-            $be = mysqli_real_escape_string($conn, $data['backE']);
-            $db = mysqli_real_escape_string($conn, $data['dataB']);
-            $repo = mysqli_real_escape_string($conn, $data['repoL']);
+            // Retrieve form data
+            $data = $_POST;
 
+            // Retrieve file data
+            $file_data = array(
+                "N_img" => array($_FILES["N_img"]["name"], $_FILES["N_img"]["tmp_name"]),
+                "N_img2" => array($_FILES["N_img2"]["name"], $_FILES["N_img2"]["tmp_name"]),
+                "N_img3" => array($_FILES["N_img3"]["name"], $_FILES["N_img3"]["tmp_name"])
+            );
 
-            if (isset($_FILES["N_img"])) {
-                $img_name = $_FILES["N_img"]["name"];
-                $img_temp_loc = $_FILES["N_img"]["tmp_name"];
+            $allowed_extensions = array("jpg", "png", "jpeg");
+            $inserted_projects = 0;
 
-                $temp_extension = explode(".", $img_name);
-                $N_img_extension = strtolower(end($temp_extension));
-                $allowed_extensions = array("jpg", "png", "jpeg");
+            foreach ($file_data as $key => $file) {
+                $img_name = $file[0];
+                $img_temp_loc = $file[1];
+                $N_img_extension = strtolower(pathinfo($img_name, PATHINFO_EXTENSION));
 
                 if (in_array($N_img_extension, $allowed_extensions)) {
                     $new_file_name = uniqid("", true) . "." . $N_img_extension;
                     $location = "project-image/" . $new_file_name;
 
                     if (move_uploaded_file($img_temp_loc, $location)) {
-                        // Image uploaded successfully, now you can process it further if needed
+                        // Assign the new file name dynamically
+                        ${'new_file_name_' . $key} = $new_file_name;
+                        $inserted_projects++;
                     } else {
                         echo "Error uploading image";
                     }
                 } else {
-                    $img_err = "<p style='color:red'> * Only JPG, JPEG, and PNG files are accepted </p>";
+                    echo "Invalid file format";
                 }
             }
 
-            if (!empty($description) && !empty($title) && !empty($img_name)) {
+            if ($inserted_projects == count($file_data)) {
+                // All files uploaded successfully, insert project data into the database
+                $title = mysqli_real_escape_string($conn, $data['tittle']);
+                $title2 = mysqli_real_escape_string($conn, $data['tittle2']);
+                $title3 = mysqli_real_escape_string($conn, $data['tittle3']);
+                $description = mysqli_real_escape_string($conn, $data['descrip']);
+                $description2 = mysqli_real_escape_string($conn, $data['descrip2']);
+                $description3 = mysqli_real_escape_string($conn, $data['descrip3']);
+                $repo = mysqli_real_escape_string($conn, $data['repoL']);
+                $repo2 = mysqli_real_escape_string($conn, $data['repoL2']);
+                $repo3 = mysqli_real_escape_string($conn, $data['repoL3']);
 
-                $project_data  = $conn->prepare("INSERT INTO `projects`(`un_id`, `pr_tittle`, `pr_desc`, `pr_img`, `pr_repo`, `frontend`, `backend`, `dbase`) VALUES (?, ?, ?, ?, ?, ?, ?, ?)");
-                $project_data->bind_param("ssssssss", $uniq_Id, $title, $description, $new_file_name, $repo, $fe, $be, $db);
-                $inserted_project = $project_data->execute();
-                $project_data->close(); 
+                $project_data = $conn->prepare("INSERT INTO `projects`(`un_id`, `pr_tittle`, `pr_tittle2`, `pr_tittle3`, `pr_desc`, `pr_desc2`, `pr_desc3`, `pr_img`, `pr_img2`, `pr_img3`, `pr_repo`, `pr_repo2`, `pr_repo3`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
+                $project_data->bind_param("sssssssssssss", $uniq_Id,  $title, $title2, $title3, $description, $description2, $description3, $new_file_name_N_img, $new_file_name_N_img2, $new_file_name_N_img3, $repo, $repo2, $repo3);
+                $inserted = $project_data->execute();
+
+                if ($inserted) {
+                    $_SESSION['status'] = $uniq_Id;
+                    echo "<script>
+                            alert('Congratulations! Your Profile Successfully Created.');
+                            window.location.href = 'congratulation.php?';
+                          </script>";
+                } else {
+                    echo "Error inserting projects";
+                }
+
+
+                $project_data->close();
+            } else {
+                echo "Error inserting projects";
             }
-            
         }
+
+
+
+
 
         if ($profile_created && $inserted_social_links) {
             json_encode(['success' => true]);
@@ -112,11 +146,11 @@
             json_encode(['error' => 'Profile creation failed']);
             error_log("Error: " . $conn->error);
         }
-         
+
         // Close the prepared statements:) 
         $update_details->close();
         $social_links->close();
-        
+
 
         // Close the database connection
         $conn->close();
@@ -150,7 +184,7 @@
                     <input class="mt-1 p-2 w-full bg-gray-700 border border-gray-600 rounded-md text-white" type="number" id="mo_num" name="mob_num">
                 </div>
                 <div class="mb-4">
-                    <label class="block text-sm font-medium text-gray-300" for="adrs">Email Address</label>
+                    <label class="block text-sm font-medium text-gray-300" for="adrs">Your Address (Current Location)</label>
                     <input class="mt-1 p-2 w-full bg-gray-700 border border-gray-600 rounded-md text-white" type="text" id="adrs" name="addres">
                 </div>
                 <div class="mb-4">
@@ -226,8 +260,6 @@
                 <script>
                     function showForm(selectedOption) {
                         var form1 = document.getElementById("form1");
-
-
                         if (selectedOption === "1") {
                             form1.style.display = "block";
                         } else if (selectedOption === "2") {
@@ -245,7 +277,7 @@
                             <path d="M206 171.144L42.678 7.822c-9.763-9.763-25.592-9.763-35.355 0-9.763 9.764-9.763 25.592 0 35.355l181 181c4.88 4.882 11.279 7.323 17.677 7.323s12.796-2.441 17.678-7.322l181-181c9.763-9.764 9.763-25.592 0-35.355-9.763-9.763-25.592-9.763-35.355 0L206 171.144z" fill="#648299" fill-rule="nonzero" />
                         </svg>
                         <select id="projects" onchange="showForm(this.value)" class="border border-gray-300 rounded-full text-gray-600 h-10 pl-5 pr-10 bg-white hover:border-gray-400 focus:outline-none appearance-none">
-                            <option value="0">You Have any Projects</option>
+                            <option value="0">You Have 2 or 3 Projects</option>
                             <option value="1">Yes</option>
                             <option value="2">No</option>
                         </select>
@@ -255,7 +287,7 @@
 
 
                 <div class="mb-4" id="form1" style="display: none;">
-                    <?php $_SESSION['project']=1; ?>
+                    <?php $_SESSION['project'] = 1; ?>
                     <h2 class="text-2xl font-bold text-white mb-6">Update Poject Details</h2>
                     <div class="mb-4">
                         <label class="block text-sm font-medium text-gray-300" for="title">Project Heading</label>
@@ -268,21 +300,6 @@
                     </div>
 
                     <div class="mb-4">
-                        <label class="block text-sm font-medium text-gray-300" for="fE">Frontend</label>
-                        <input class="mt-1 p-2 w-full bg-gray-700 border border-gray-600 rounded-md text-white" type="text" id="fE" name="frontE">
-                    </div>
-
-                    <div class="mb-4">
-                        <label class="block text-sm font-medium text-gray-300" for="bE">Backend</label>
-                        <input class="mt-1 p-2 w-full bg-gray-700 border border-gray-600 rounded-md text-white" type="text" id="bE" name="backE">
-                    </div>
-
-                    <div class="mb-4">
-                        <label class="block text-sm font-medium text-gray-300" for="db">Database</label>
-                        <input class="mt-1 p-2 w-full bg-gray-700 border border-gray-600 rounded-md text-white" type="text" id="db" name="dataB">
-                    </div>
-
-                    <div class="mb-4">
                         <label class="block text-sm font-medium text-gray-300" for="img">Image</label>
                         <input class="mt-1 p-2 w-full bg-gray-700 border border-gray-600 rounded-md text-white" type="file" id="img" name="N_img">
                     </div>
@@ -291,9 +308,46 @@
                         <label class="block text-sm font-medium text-gray-300" for="repo">Reposetry or Live Link</label>
                         <input class="mt-1 p-2 w-full bg-gray-700 border border-gray-600 rounded-md text-white" type="text" id="rep" name="repoL">
                     </div>
+                    <div class="mb-4">
+                        <label class="block text-sm font-medium text-gray-300" for="title">Project Heading</label>
+                        <input class="mt-1 p-2 w-full bg-gray-700 border border-gray-600 rounded-md text-white" type="text" id="title" name="tittle2">
+                    </div>
+
+                    <div class="mb-4">
+                        <label class="block text-sm font-medium text-gray-300" for="dess">Project Description</label>
+                        <textarea class="mt-1 p-2 w-full bg-gray-700 border border-gray-600 rounded-md text-white" rows="5" id="descrip" name="descrip2"></textarea>
+                    </div>
+
+                    <div class="mb-4">
+                        <label class="block text-sm font-medium text-gray-300" for="img">Image</label>
+                        <input class="mt-1 p-2 w-full bg-gray-700 border border-gray-600 rounded-md text-white" type="file" id="img" name="N_img2">
+                    </div>
 
                     <div class="mb-4">
                         <label class="block text-sm font-medium text-gray-300" for="repo">Reposetry or Live Link</label>
+                        <input class="mt-1 p-2 w-full bg-gray-700 border border-gray-600 rounded-md text-white" type="text" id="rep" name="repoL2">
+                    </div>
+                    <div class="mb-4">
+                        <label class="block text-sm font-medium text-gray-300" for="title">Project Heading</label>
+                        <input class="mt-1 p-2 w-full bg-gray-700 border border-gray-600 rounded-md text-white" type="text" id="title" name="tittle3">
+                    </div>
+
+                    <div class="mb-4">
+                        <label class="block text-sm font-medium text-gray-300" for="dess">Project Description</label>
+                        <textarea class="mt-1 p-2 w-full bg-gray-700 border border-gray-600 rounded-md text-white" rows="5" id="descrip" name="descrip3"></textarea>
+                    </div>
+
+                    <div class="mb-4">
+                        <label class="block text-sm font-medium text-gray-300" for="img">Image</label>
+                        <input class="mt-1 p-2 w-full bg-gray-700 border border-gray-600 rounded-md text-white" type="file" id="img" name="N_img3">
+                    </div>
+
+                    <div class="mb-4">
+                        <label class="block text-sm font-medium text-gray-300" for="repo">Reposetry or Live Link</label>
+                        <input class="mt-1 p-2 w-full bg-gray-700 border border-gray-600 rounded-md text-white" type="text" id="rep" name="repoL3">
+                    </div>
+
+                    <div class="mb-4">
                         <input class="mt-1 p-2 w-full bg-gray-700 border border-gray-600 rounded-md text-white" type="hidden" id="rep" name="project" value="1">
                     </div>
 
@@ -315,8 +369,9 @@
     </div>
 </body>
 <script>
-    if ( window.history.replaceState ) {
-        window.history.replaceState( null, null, window.location.href );
+    if (window.history.replaceState) {
+        window.history.replaceState(null, null, window.location.href);
     }
 </script>
+
 </html>

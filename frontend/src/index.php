@@ -10,6 +10,8 @@ if ($user_data) {
     $data = mysqli_fetch_assoc($result);
     $usr_name =  $data['user_name'];
     $user_email =  $data['user_email'];
+    $user_mob =  $data['m_no'];
+    $user_add =  $data['address'];
     $bio = $data['user_bio'];
     $profession =  $data['profesion'];
     $a_bt = $data['ab_1'];
@@ -41,7 +43,5 @@ include_once("components/social.php");
 include_once("components/project.php");
 include_once("components/service.php");
 include_once("components/contact-us.php");
-?>
-<?php 
 include_once("components/footer.php");
 ?>

@@ -21,7 +21,4 @@ if ($result) {
     echo "Error executing query: " . mysqli_error($conn);
 }
 
-
-
-
 ?>
