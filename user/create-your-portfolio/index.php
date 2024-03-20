@@ -169,88 +169,88 @@
             <form method="POST" enctype="multipart/form-data" action=" <?php htmlspecialchars($_SERVER['PHP_SELF']) ?>">
                 <div class="mb-4">
                     <label class="block text-sm font-medium text-gray-300" for="name">Full Name</label>
-                    <input class="mt-1 p-2 w-full bg-gray-700 border border-gray-600 rounded-md text-white" type="text" id="name" name="name">
+                    <input class="  mt-1 p-2 w-full bg-gray-700 border border-gray-600 rounded-md text-white" type="text" id="name" name="name" required>
                 </div>
                 <div class="mb-4">
                     <label class="block text-sm font-medium text-gray-300" for="Profession">Profession</label>
-                    <input class="mt-1 p-2 w-full bg-gray-700 border border-gray-600 rounded-md text-white" type="text" id="profe" name="prof">
+                    <input class="  mt-1 p-2 w-full bg-gray-700 border border-gray-600 rounded-md text-white" type="text" id="profe" name="prof" required>
                 </div>
                 <div class="mb-4">
                     <label class="block text-sm font-medium text-gray-300" for="email">Email Address</label>
-                    <input class="mt-1 p-2 w-full bg-gray-700 border border-gray-600 rounded-md text-white" type="email" id="email" name="mail">
+                    <input class="  mt-1 p-2 w-full bg-gray-700 border border-gray-600 rounded-md text-white" type="email" id="email" name="mail" required>
                 </div>
                 <div class="mb-4">
                     <label class="block text-sm font-medium text-gray-300" for="mo_num">Mobile Number</label>
-                    <input class="mt-1 p-2 w-full bg-gray-700 border border-gray-600 rounded-md text-white" type="number" id="mo_num" name="mob_num">
+                    <input class="  mt-1 p-2 w-full bg-gray-700 border border-gray-600 rounded-md text-white" type="number" id="mo_num" name="mob_num" required>
                 </div>
                 <div class="mb-4">
                     <label class="block text-sm font-medium text-gray-300" for="adrs">Your Address (Current Location)</label>
-                    <input class="mt-1 p-2 w-full bg-gray-700 border border-gray-600 rounded-md text-white" type="text" id="adrs" name="addres">
+                    <input class="  mt-1 p-2 w-full bg-gray-700 border border-gray-600 rounded-md text-white" type="text" id="adrs" name="addres" required>
                 </div>
                 <div class="mb-4">
                     <label class="block text-sm font-medium text-gray-300" for="Bio">Bio - Title</label>
-                    <input class="mt-1 p-2 w-full bg-gray-700 border border-gray-600 rounded-md text-white" type="text" id="bio" name="bio">
+                    <input class="  mt-1 p-2 w-full bg-gray-700 border border-gray-600 rounded-md text-white" type="text" id="bio" name="bio" required>
                 </div>
 
                 <div class="mb-4">
                     <label class="block text-sm font-medium text-gray-300" for="Summary">Summary</label>
-                    <textarea class="mt-1 p-2 w-full bg-gray-700 border border-gray-600 rounded-md text-white" rows="3" id="summary" name="ab_1"></textarea>
+                    <textarea class="mt-1 p-2 w-full bg-gray-700 border border-gray-600 rounded-md text-white" rows="3" id="summary" name="ab_1" required></textarea>
                 </div>
                 <div class="mb-4">
                     <label class="block text-sm font-medium text-gray-300" for="Summary">Summary 2</label>
-                    <textarea class="mt-1 p-2 w-full bg-gray-700 border border-gray-600 rounded-md text-white" rows="3" id="summary" name="ab_2"></textarea>
+                    <textarea class="mt-1 p-2 w-full bg-gray-700 border border-gray-600 rounded-md text-white" rows="3" id="summary" name="ab_2" required></textarea>
                 </div>
 
                 <div class="mb-4">
                     <label class="block text-sm font-medium text-gray-300" for="Resume">Resume</label>
-                    <input class="mt-1 p-2 w-full bg-gray-700 border border-gray-600 rounded-md text-white" type="text" id="resume" name="cv">
+                    <input class="  mt-1 p-2 w-full bg-gray-700 border border-gray-600 rounded-md text-white" type="text" id="resume" name="cv" required>
                 </div>
 
                 <!-- Social Meidia Link Update -->
 
                 <div class="mb-4">
                     <label class="block text-sm font-medium text-gray-300" for="social">LinkdIn Profile Link</label>
-                    <input class="mt-1 p-2 w-full bg-gray-700 border border-gray-600 rounded-md text-white" type="text" id="LinkdIn" name="L_in">
+                    <input class="  mt-1 p-2 w-full bg-gray-700 border border-gray-600 rounded-md text-white" type="text" id="LinkdIn" name="L_in" required>
                 </div>
                 <div class="mb-4">
                     <label class="block text-sm font-medium text-gray-300" for="social">Instagram Profile Link</label>
-                    <input class="mt-1 p-2 w-full bg-gray-700 border border-gray-600 rounded-md text-white" type="text" id="Instagram" name="In_ta">
+                    <input class="  mt-1 p-2 w-full bg-gray-700 border border-gray-600 rounded-md text-white" type="text" id="Instagram" name="In_ta" required>
                 </div>
                 <div class="mb-4">
                     <label class="block text-sm font-medium text-gray-300" for="social">X (Twitter) Profile Link</label>
-                    <input class="mt-1 p-2 w-full bg-gray-700 border border-gray-600 rounded-md text-white" type="text" id="Twitter" name="tw_er">
+                    <input class="  mt-1 p-2 w-full bg-gray-700 border border-gray-600 rounded-md text-white" type="text" id="Twitter" name="tw_er" required>
                 </div>
                 <div class="mb-4">
                     <label class="block text-sm font-medium text-gray-300" for="social">Git Hub Profile Link</label>
-                    <input class="mt-1 p-2 w-full bg-gray-700 border border-gray-600 rounded-md text-white" type="text" id="GH" name="g_h">
+                    <input class="  mt-1 p-2 w-full bg-gray-700 border border-gray-600 rounded-md text-white" type="text" id="GH" name="g_h" required>
                 </div>
                 <div class="mb-4">
                     <label class="block text-sm font-medium text-gray-300" for="social">WhatsApp No</label>
-                    <input class="mt-1 p-2 w-full bg-gray-700 border border-gray-600 rounded-md text-white" type="text" id="WP" name="w_a">
+                    <input class="  mt-1 p-2 w-full bg-gray-700 border border-gray-600 rounded-md text-white" type="text" id="WP" name="w_a" required>
                 </div>
                 <div class="mb-4">
                     <label class="block text-sm font-medium text-gray-300" for="social">Teligram Profile Id</label>
-                    <input class="mt-1 p-2 w-full bg-gray-700 border border-gray-600 rounded-md text-white" type="text" id="TG" name="t_g">
+                    <input class="  mt-1 p-2 w-full bg-gray-700 border border-gray-600 rounded-md text-white" type="text" id="TG" name="t_g" required>
                 </div>
                 <div class="mb-4">
                     <label class="block text-sm font-medium text-gray-300" for="social">Facebook Profile Link</label>
-                    <input class="mt-1 p-2 w-full bg-gray-700 border border-gray-600 rounded-md text-white" type="text" id="FB" name="f_b">
+                    <input class="  mt-1 p-2 w-full bg-gray-700 border border-gray-600 rounded-md text-white" type="text" id="FB" name="f_b" required>
                 </div>
                 <div class="mb-4">
                     <label class="block text-sm font-medium text-gray-300" for="social">Youtube Channel Link</label>
-                    <input class="mt-1 p-2 w-full bg-gray-700 border border-gray-600 rounded-md text-white" type="text" id="Yt" name="y_t">
+                    <input class="  mt-1 p-2 w-full bg-gray-700 border border-gray-600 rounded-md text-white" type="text" id="Yt" name="y_t" required>
                 </div>
                 <div class="mb-4">
                     <label class="block text-sm font-medium text-gray-300" for="social">Pintrest</label>
-                    <input class="mt-1 p-2 w-full bg-gray-700 border border-gray-600 rounded-md text-white" type="text" id="Pn" name="p_s">
+                    <input class="  mt-1 p-2 w-full bg-gray-700 border border-gray-600 rounded-md text-white" type="text" id="Pn" name="p_s" required>
                 </div>
                 <div class="mb-4">
                     <label class="block text-sm font-medium text-gray-300" for="social">Discord Server Link</label>
-                    <input class="mt-1 p-2 w-full bg-gray-700 border border-gray-600 rounded-md text-white" type="text" id="Dis" name="d_s">
+                    <input class="  mt-1 p-2 w-full bg-gray-700 border border-gray-600 rounded-md text-white" type="text" id="Dis" name="d_s" required>
                 </div>
                 <div class="mb-4">
                     <label class="block text-sm font-medium text-gray-300" for="social">Redit Profile</label>
-                    <input class="mt-1 p-2 w-full bg-gray-700 border border-gray-600 rounded-md text-white" type="text" id="Redit " name="r_d">
+                    <input class="  mt-1 p-2 w-full bg-gray-700 border border-gray-600 rounded-md text-white" type="text" id="Redit " name="r_d" required>
                 </div>
 
 
@@ -277,7 +277,7 @@
                             <path d="M206 171.144L42.678 7.822c-9.763-9.763-25.592-9.763-35.355 0-9.763 9.764-9.763 25.592 0 35.355l181 181c4.88 4.882 11.279 7.323 17.677 7.323s12.796-2.441 17.678-7.322l181-181c9.763-9.764 9.763-25.592 0-35.355-9.763-9.763-25.592-9.763-35.355 0L206 171.144z" fill="#648299" fill-rule="nonzero" />
                         </svg>
                         <select id="projects" onchange="showForm(this.value)" class="border border-gray-300 rounded-full text-gray-600 h-10 pl-5 pr-10 bg-white hover:border-gray-400 focus:outline-none appearance-none">
-                            <option value="0">You Have 2 or 3 Projects</option>
+                            <option value="0">You Have 3 Projects</option>
                             <option value="1">Yes</option>
                             <option value="2">No</option>
                         </select>
@@ -291,64 +291,64 @@
                     <h2 class="text-2xl font-bold text-white mb-6">Update Poject Details</h2>
                     <div class="mb-4">
                         <label class="block text-sm font-medium text-gray-300" for="title">Project Heading</label>
-                        <input class="mt-1 p-2 w-full bg-gray-700 border border-gray-600 rounded-md text-white" type="text" id="title" name="tittle">
+                        <input class="  mt-1 p-2 w-full bg-gray-700 border border-gray-600 rounded-md text-white" type="text" id="title" name="tittle" required>
                     </div>
 
                     <div class="mb-4">
                         <label class="block text-sm font-medium text-gray-300" for="dess">Project Description</label>
-                        <textarea class="mt-1 p-2 w-full bg-gray-700 border border-gray-600 rounded-md text-white" rows="5" id="descrip" name="descrip"></textarea>
+                        <textarea class="mt-1 p-2 w-full bg-gray-700 border border-gray-600 rounded-md text-white" rows="5" id="descrip" name="descrip" required></textarea>
                     </div>
 
                     <div class="mb-4">
                         <label class="block text-sm font-medium text-gray-300" for="img">Image</label>
-                        <input class="mt-1 p-2 w-full bg-gray-700 border border-gray-600 rounded-md text-white" type="file" id="img" name="N_img">
+                        <input class="  mt-1 p-2 w-full bg-gray-700 border border-gray-600 rounded-md text-white" type="file" id="img" name="N_img" required>
                     </div>
 
                     <div class="mb-4">
                         <label class="block text-sm font-medium text-gray-300" for="repo">Reposetry or Live Link</label>
-                        <input class="mt-1 p-2 w-full bg-gray-700 border border-gray-600 rounded-md text-white" type="text" id="rep" name="repoL">
+                        <input class="  mt-1 p-2 w-full bg-gray-700 border border-gray-600 rounded-md text-white" type="text" id="rep" name="repoL" required>
                     </div>
                     <div class="mb-4">
                         <label class="block text-sm font-medium text-gray-300" for="title">Project Heading</label>
-                        <input class="mt-1 p-2 w-full bg-gray-700 border border-gray-600 rounded-md text-white" type="text" id="title" name="tittle2">
+                        <input class="  mt-1 p-2 w-full bg-gray-700 border border-gray-600 rounded-md text-white" type="text" id="title" name="tittle2" required>
                     </div>
 
                     <div class="mb-4">
                         <label class="block text-sm font-medium text-gray-300" for="dess">Project Description</label>
-                        <textarea class="mt-1 p-2 w-full bg-gray-700 border border-gray-600 rounded-md text-white" rows="5" id="descrip" name="descrip2"></textarea>
+                        <textarea class="mt-1 p-2 w-full bg-gray-700 border border-gray-600 rounded-md text-white" rows="5" id="descrip" name="descrip2" required></textarea>
                     </div>
 
                     <div class="mb-4">
                         <label class="block text-sm font-medium text-gray-300" for="img">Image</label>
-                        <input class="mt-1 p-2 w-full bg-gray-700 border border-gray-600 rounded-md text-white" type="file" id="img" name="N_img2">
+                        <input class="  mt-1 p-2 w-full bg-gray-700 border border-gray-600 rounded-md text-white" type="file" id="img" name="N_img2" required>
                     </div>
 
                     <div class="mb-4">
                         <label class="block text-sm font-medium text-gray-300" for="repo">Reposetry or Live Link</label>
-                        <input class="mt-1 p-2 w-full bg-gray-700 border border-gray-600 rounded-md text-white" type="text" id="rep" name="repoL2">
+                        <input class="  mt-1 p-2 w-full bg-gray-700 border border-gray-600 rounded-md text-white" type="text" id="rep" name="repoL2" required>
                     </div>
                     <div class="mb-4">
                         <label class="block text-sm font-medium text-gray-300" for="title">Project Heading</label>
-                        <input class="mt-1 p-2 w-full bg-gray-700 border border-gray-600 rounded-md text-white" type="text" id="title" name="tittle3">
+                        <input class="  mt-1 p-2 w-full bg-gray-700 border border-gray-600 rounded-md text-white" type="text" id="title" name="tittle3" required>
                     </div>
 
                     <div class="mb-4">
                         <label class="block text-sm font-medium text-gray-300" for="dess">Project Description</label>
-                        <textarea class="mt-1 p-2 w-full bg-gray-700 border border-gray-600 rounded-md text-white" rows="5" id="descrip" name="descrip3"></textarea>
+                        <textarea class="mt-1 p-2 w-full bg-gray-700 border border-gray-600 rounded-md text-white" rows="5" id="descrip" name="descrip3" required></textarea>
                     </div>
 
                     <div class="mb-4">
                         <label class="block text-sm font-medium text-gray-300" for="img">Image</label>
-                        <input class="mt-1 p-2 w-full bg-gray-700 border border-gray-600 rounded-md text-white" type="file" id="img" name="N_img3">
+                        <input class="  mt-1 p-2 w-full bg-gray-700 border border-gray-600 rounded-md text-white" type="file" id="img" name="N_img3" required>
                     </div>
 
                     <div class="mb-4">
                         <label class="block text-sm font-medium text-gray-300" for="repo">Reposetry or Live Link</label>
-                        <input class="mt-1 p-2 w-full bg-gray-700 border border-gray-600 rounded-md text-white" type="text" id="rep" name="repoL3">
+                        <input class="  mt-1 p-2 w-full bg-gray-700 border border-gray-600 rounded-md text-white" type="text" id="rep" name="repoL3" required>
                     </div>
 
                     <div class="mb-4">
-                        <input class="mt-1 p-2 w-full bg-gray-700 border border-gray-600 rounded-md text-white" type="hidden" id="rep" name="project" value="1">
+                        <input class="  mt-1 p-2 w-full bg-gray-700 border border-gray-600 rounded-md text-white" type="hidden" id="rep" name="project" value="1">
                     </div>
 
                 </div>
