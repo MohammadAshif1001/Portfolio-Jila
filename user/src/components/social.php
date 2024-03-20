@@ -237,7 +237,7 @@
                         <path d="M13 9L9 13M9 13L5 9M9 13V1" stroke="#F2F2F2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                         <path d="M1 17V18C1 18.7956 1.31607 19.5587 1.87868 20.1213C2.44129 20.6839 3.20435 21 4 21H14C14.7956 21 15.5587 20.6839 16.1213 20.1213C16.6839 19.5587 17 18.7956 17 18V17" stroke="#F2F2F2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                     </svg>
-                    <div class="button-copy uppercase"><a href="<?php echo $cv_l; ?>">Download Resume </a></div>
+                    <div class="button-copy uppercase"><a href="../create-your-portfolio/<?php echo $cv_l; ?>" download="newfilename">Download Resume </a></div>
                 </div>
             </button>
         </div>

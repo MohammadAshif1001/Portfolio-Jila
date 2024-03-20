@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="include/style.css">
 
     <!-- FavIcon -->
-    <link href="include/favicon_io/favicon.ico" rel="icon">
+    <link href="include/favicons_io/favicon.ico" rel="icon">
 
     <script src="https://unpkg.com/@popperjs/core@2/dist/umd/popper.min.js"></script>
     <script src="https://unpkg.com/tippy.js@6/dist/tippy-bundle.umd.js"></script>

@@ -17,32 +17,38 @@
             </div>
         </div>
         <div class="links">
-            <h4 class="text-lg font-semibold mb-2">Company</h4>
-            <div class="links flex flex-col gap-2 m-2">
+            <h4 class="text-lg font-semibold mb-2"></h4>
+            <!-- <div class="links flex flex-col gap-2 m-2">
             <a href="#" class="text-sm hover-underline-animation">Business</a>
             <a href="#" class="text-sm hover-underline-animation">Partnership</a>
             <a href="#" class="text-sm hover-underline-animation">Network</a>
-            </div>
+            </div> -->
+            <button class="mt-6 bg-slate-700 hover:bg-slate-900 active:bg-slate-950 focus:outline-none focus:ring focus:ring-violet-300 rounded-md px-3 py-2 text-cyan-500 font-serif hover:text-cyan-400 shadow-md w-auto cursor-pointer" type="submit"><a href="../../create-your-portfolio/index.php">Create Your Profile</a></button>
+
+
+
+
+
         </div>
         <div class="links">
             <h4 class="text-lg font-semibold mb-2">About Us</h4>
             <div class="links flex flex-col gap-2 m-2">
-            <a href="#" class="text-sm hover-underline-animation">Blogs</a>
-            <a href="#" class="text-sm hover-underline-animation">Channels</a>
-            <a href="#" class="text-sm hover-underline-animation">Sponsors</a>
+                <a href="#" class="text-sm hover-underline-animation">Blogs</a>
+                <a href="#" class="text-sm hover-underline-animation">Channels</a>
+                <a href="#" class="text-sm hover-underline-animation">Sponsors</a>
             </div>
         </div>
         <div class="links">
-            
+
             <h4 class="text-lg font-semibold mb-2">Contact</h4>
             <div class="links flex flex-col gap-2 m-2">
-            <a href="#" class="text-sm hover-underline-animation">Contact Us</a>
-            <a href="#" class="text-sm hover-underline-animation">Privacy Policy</a>
-            <a href="#" class="text-sm hover-underline-animation">Terms & Conditions</a>
-        </div>
+                <a href="#" class="text-sm hover-underline-animation">Contact Us</a>
+                <a href="#" class="text-sm hover-underline-animation">Privacy Policy</a>
+                <a href="#" class="text-sm hover-underline-animation">Terms & Conditions</a>
+            </div>
         </div>
     </div>
-    
+
 </footer>
 
 <div class="bg-slate-950 text-white py-3 text-sm text-center m-8">
