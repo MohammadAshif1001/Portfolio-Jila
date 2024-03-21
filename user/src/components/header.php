@@ -1,4 +1,5 @@
 <html class="scroll-smooth">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -88,7 +89,8 @@
             <li id="Contact" class="hover-underline-animation"><a href="#contact-us">Say Hii!</a></li>
         </ul>
 
-        <button class="bg-slate-900 hover:bg-slate-800 active:bg-slate-700 focus:outline-none focus:ring focus:ring-violet-300 rounded-md px-3 py-2 text-cyan-500 font-serif  hover:text-cyan-400 shadow-md cursor-pointer"><a href="<?php echo $whatsapp; ?>">Hire Me</a></button>
+        <button class="bg-slate-900 hover:bg-slate-800 active:bg-slate-700 focus:outline-none focus:ring focus:ring-violet-300 rounded-md px-3 py-2 text-cyan-500 font-serif  hover:text-cyan-400 shadow-md cursor-pointer"><a href="../create-your-portfolio/">Create Your Profile</a></button>
+
     </nav>
     <!-- Nav End -->
 
@@ -104,8 +106,9 @@
             </p>
             <button class="bg-slate-900 hover:bg-slate-800 active:bg-slate-700 focus:outline-none focus:ring focus:ring-violet-300 rounded-md px-3 py-2 text-cyan-500 font-serif  hover:text-cyan-400 shadow-md mt-10 cursor-pointer">Let's Collaborate and Build Something Amazing</button>
         </div>
-        <div class="avatar">
-            <!-- <img src="include/img/female-developer.png" alt="Man Image"> -->
-            <img src="include/img/man.png" alt="Man Image">
+        <div class="avatar max-w-[350px] max-h-[520px]">
+            <!-- <img src="include/img/female-developer.png" alt="Woman Image"> -->
+            <img src="include/img/man.png" alt="Man Image" class="max-w-[350px] max-h-[520px]">
         </div>
+
     </div>

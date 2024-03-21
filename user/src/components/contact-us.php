@@ -11,7 +11,7 @@
                         </div>
                         <div class="ml-4 md:ml-8 my-8">
                             <button class="bg-gradient-to-r from-purple-600 via-purple-400 to-blue-500 text-white w-6 h-6 border-1 rounded-full text-sm hover:text-white">
-                                <i class="fab fa fa-phone"></i>
+                            <a href="tel:<?php echo $user_mob;?>"><i class="fab fa fa-phone"></i></a>
                             </button>
                             <span class="ml-2 text-gray-400 text-xs md:text-md  font-medium"><?php echo $user_mob;?></span>
                         </div>

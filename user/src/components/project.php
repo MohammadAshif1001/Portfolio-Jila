@@ -1,63 +1,112 @@
 <section id="projects">
     <h2 class="text-4xl font-extrabold text-gray-800 text-center mt-10 mb-8">Projects</h2>
-    <div class="flex flex-col m-5 md:flex-row justify-center items-center space-y-4 md:space-y-0 md:space-x-8">
+    <div class="flex flex-col m-2 mt-16 md:flex-row justify-evenly space-y-4 md:space-y-0 md:space-x-8">
 
-    <?php 
-$pr_query = "SELECT * FROM `projects` WHERE `un_id` = '$apikey'";
-$projects = mysqli_query($conn, $pr_query);
-if($projects){
-    $project = mysqli_fetch_assoc($projects);
-?>
-    <!-- Project Card -->
-    <div class="bg-slate-900 hover:bg-slate-800 active:bg-slate-700 focus:ring focus:ring-slate-50 rounded-lg p-5 hover:outline text-slate-50 font-serif hover:text-cyan-400 shadow-md">
-        <div class="content">
-            <h4 class="mb-4 text-xl font-bold "><?php echo $project['pr_tittle'];?></h4>
-            <div class="image mb-4">
-                <img src="../create-your-portfolio/project-image/<?php echo $project['pr_img'];?>" alt="Man Image">
+        <?php
+        $pr_query = "SELECT * FROM `projects` WHERE `un_id` = '$apikey'";
+        $projects = mysqli_query($conn, $pr_query);
+        if ($projects) {
+            $project = mysqli_fetch_assoc($projects);
+        ?>
+           
+            <!-- Project Card -->
+            
+        <!-- 1 Card Start -->
+        <div class="card rounded-xl bg-slate-900  shadow-blue-500/20 transition-all hover:shadow-lg hover:shadow-blue-500/40 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none">
+            <div class="relative flex w-80 flex-col rounded-xl bg-slate-900 bg-clip-border text-slate-50 shadow-md">
+                <div class="relative mx-4 -mt-6 overflow-hidden rounded-xl bg-blue-gray-500 bg-clip-border text-white shadow-lg shadow-blue-gray-500/40 bg-gradient-to-r from-blue-500 to-blue-600">
+                    <div class="object-cover w-full h-full" id="imageContainer">
+                        <img src="../create-your-portfolio/project-image/<?php echo $project['pr_img']; ?>" alt="Man Image" class="object-cover w-full h-full" id="projectImage">
+                    </div>
+                </div>
+
+                <div class="p-6">
+                    <h5 class="mb-2 block font-sans text-xl font-semibold leading-snug tracking-normal text-blue-gray-900 antialiased">
+                        <?php echo $project['pr_tittle']; ?>
+                    </h5>
+                    <p class="block font-sans text-base font-light leading-relaxed text-inherit antialiased">
+                        <?php echo $project['pr_desc']; ?>
+                    </p>
+                </div>
+
+                <div class="p-6 pt-0">
+                    <button data-ripple-light="true" type="button" class="select-none rounded-lg bg-slate-800 py-3 px-6 text-center align-middle font-sans text-xs font-bold uppercase text-white shadow-md shadow-blue-500/20 transition-all hover:shadow-lg hover:shadow-blue-500/40 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none">
+                        Read More
+                    </button>
+                </div>
+
             </div>
-
-            <p class="mb-4 flex items-center">
-            <?php echo $project['pr_desc'];?>
-            </p>
         </div>
-        <button class="mt-8 bg-slate-700 hover:bg-slate-950 active:bg-slate-950 focus:outline-none focus:ring focus:ring-violet-300 rounded-md px-3 py-2 text-cyan-500 font-serif hover:text-cyan-400 shadow-md w-full cursor-pointer ">Preview</button>
-    </div>
-    <!-- End -->
-    <!-- Project Card -->
-    <div class="bg-slate-900 hover:bg-slate-800 active:bg-slate-700 focus:ring focus:ring-slate-50 rounded-lg p-5 hover:outline text-slate-50 font-serif hover:text-cyan-400 shadow-md">
-        <div class="content">
-            <h4 class="mb-4 text-xl font-bold "><?php echo $project['pr_tittle2'];?></h4>
-            <div class="image mb-4">
-                <img src="../create-your-portfolio/project-image/<?php echo $project['pr_img2'];?>" alt="Man Image">
+        l
+        <!-- 2 Card Start -->
+        <div class="card rounded-xl bg-slate-900  shadow-blue-500/20 transition-all hover:shadow-lg hover:shadow-blue-500/40 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none">
+        <div class="relative flex w-80 flex-col rounded-xl bg-slate-900 bg-clip-border text-slate-50 shadow-md">
+                <div class="relative mx-4 -mt-6 overflow-hidden rounded-xl bg-blue-gray-500 bg-clip-border text-white shadow-lg shadow-blue-gray-500/40 bg-gradient-to-r from-blue-500 to-blue-600">
+                    <div class="object-cover w-full h-full" id="imageContainer">
+                        <img src="../create-your-portfolio/project-image/<?php echo $project['pr_img2']; ?>" alt="Man Image" class="object-cover w-full h-full" id="projectImage">
+                    </div>
+                </div>
+
+                <div class="p-6">
+                    <h5 class="mb-2 block font-sans text-xl font-semibold leading-snug tracking-normal text-blue-gray-900 antialiased">
+                        <?php echo $project['pr_tittle2']; ?>
+                    </h5>
+                    <p class="block font-sans text-base font-light leading-relaxed text-inherit antialiased">
+                        <?php echo $project['pr_desc2']; ?>
+                    </p>
+                </div>
+
+                <div class="p-6 pt-0">
+                    <button data-ripple-light="true" type="button" class="select-none rounded-lg bg-slate-800 py-3 px-6 text-center align-middle font-sans text-xs font-bold uppercase text-white shadow-md shadow-blue-500/20 transition-all hover:shadow-lg hover:shadow-blue-500/40 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none">
+                        Read More
+                    </button>
+                </div>
+
             </div>
-
-            <p class="mb-4 flex items-center">
-            <?php echo $project['pr_desc2'];?>
-            </p>
         </div>
-        <button class="mt-8 bg-slate-700 hover:bg-slate-950 active:bg-slate-950 focus:outline-none focus:ring focus:ring-violet-300 rounded-md px-3 py-2 text-cyan-500 font-serif hover:text-cyan-400 shadow-md w-full cursor-pointer ">Preview</button>
-    </div>
-    <!-- End -->
-    <!-- Project Card -->
-    <div class="bg-slate-900 hover:bg-slate-800 active:bg-slate-700 focus:ring focus:ring-slate-50 rounded-lg p-5 hover:outline text-slate-50 font-serif hover:text-cyan-400 shadow-md">
-        <div class="content">
-            <h4 class="mb-4 text-xl font-bold "><?php echo $project['pr_tittle3'];?></h4>
-            <div class="image mb-4">
-                <img src="../create-your-portfolio/project-image/<?php echo $project['pr_img3'];?>" alt="Man Image">
+        l
+        <!-- 3 Card Start -->
+        <div class="card rounded-xl bg-slate-900  shadow-blue-500/20 transition-all hover:shadow-lg hover:shadow-blue-500/40 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none">
+            <div class="relative flex w-80 flex-col rounded-xl bg-slate-900 bg-clip-border text-slate-50 shadow-md">
+                <div class="relative mx-4 -mt-6 overflow-hidden rounded-xl bg-blue-gray-500 bg-clip-border text-white shadow-lg shadow-blue-gray-500/40 bg-gradient-to-r from-blue-500 to-blue-600">
+                    <div class="object-cover w-full h-full" id="imageContainer">
+                        <img src="../create-your-portfolio/project-image/<?php echo $project['pr_img3']; ?>" alt="Man Image" class="object-cover w-full h-full" id="projectImage">
+                    </div>
+                </div>
+
+                <div class="p-6">
+                    <h5 class="mb-2 block font-sans text-xl font-semibold leading-snug tracking-normal text-blue-gray-900 antialiased">
+                        <?php echo $project['pr_tittle3']; ?>
+                    </h5>
+                    <p class="block font-sans text-base font-light leading-relaxed text-inherit antialiased">
+                        <?php echo $project['pr_desc']; ?>
+                    </p>
+                </div>
+
+                <div class="p-6 pt-0">
+                    <button data-ripple-light="true" type="button" class="select-none rounded-lg bg-slate-800 py-3 px-6 text-center align-middle font-sans text-xs font-bold uppercase text-white shadow-md shadow-blue-500/20 transition-all hover:shadow-lg hover:shadow-blue-500/40 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none">
+                        Read More
+                    </button>
+                </div>
+
             </div>
-
-            <p class="mb-4 flex items-center">
-            <?php echo $project['pr_desc3'];?>
-            </p>
         </div>
-        <button class="mt-8 bg-slate-700 hover:bg-slate-950 active:bg-slate-950 focus:outline-none focus:ring focus:ring-violet-300 rounded-md px-3 py-2 text-cyan-500 font-serif hover:text-cyan-400 shadow-md w-full cursor-pointer ">Preview</button>
+
+        <?php
+        }
+        ?>
     </div>
-    <!-- End -->
-<?php
-}
-?>
-
-
-    </div>
-
 </section>
+
+<script>
+    const imageContainer = document.getElementById('imageContainer');
+    const projectImage = document.getElementById('projectImage');
+
+    imageContainer.addEventListener('mouseenter', () => {
+        projectImage.style.transform = 'scale(1.2)';
+    });
+
+    imageContainer.addEventListener('mouseleave', () => {
+        projectImage.style.transform = 'scale(1)';
+    });
+</script>

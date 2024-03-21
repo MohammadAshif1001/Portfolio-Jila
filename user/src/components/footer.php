@@ -1,12 +1,13 @@
 <footer class="bg-slate-950 text-white">
     <div class="flex flex-col gap-5 md:flex-row justify-between m-5 space-y-4 sm:space-y-0 sm:space-x-6">
-        <div class="w-full sm:w-1/2 md:w-1/4 lg:w-1/5">
+        <div class="w-full sm:w-1/2">
             <div class="logo">
                 <img src="include/img/portfoliojila.png" alt="Logo" class="w-16 h-16">
             </div>
             <p class="text-sm mt-4">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            Transform your aspirations into stunning reality with our hassle-free portfolio website builder. Simply fill a form, and behold your personalized 3D portfolio website — no coding required. Start showcasing your brilliance today!
             </p>
+            <button class="bg-slate-900 hover:bg-slate-800 active:bg-slate-700 focus:outline-none focus:ring focus:ring-violet-300 rounded-md px-3 py-2 text-cyan-500 font-serif  hover:text-cyan-400 shadow-md cursor-pointer my-6"><a href="../create-your-portfolio/">Create Your Profile</a></button>
             <div class="info-text mt-2">
                 <a href="#" id="link3" class="scroll"><i class='bx bxs-down-arrow text-indigo-400 text-xl'></i></a>
             </div>
@@ -23,7 +24,7 @@
             <a href="#" class="text-sm hover-underline-animation">Partnership</a>
             <a href="#" class="text-sm hover-underline-animation">Network</a>
             </div> -->
-            <button class="mt-6 bg-slate-700 hover:bg-slate-900 active:bg-slate-950 focus:outline-none focus:ring focus:ring-violet-300 rounded-md px-3 py-2 text-cyan-500 font-serif hover:text-cyan-400 shadow-md w-auto cursor-pointer" type="submit"><a href="../../create-your-portfolio/index.php">Create Your Profile</a></button>
+            
 
 
 
