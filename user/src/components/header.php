@@ -102,7 +102,7 @@
             <span class="blur"></span>
             <h1 class="mb-8 text-slate-50 text-2xl md:text-6xl font-medium">Hi, I'm <span class="text-cyan-400"><?php echo $usr_name; ?></span>,<br><span class="typing-animation"><?php echo $profession; ?></span></h1>
             <p class="mt-5 text-gray-400">
-                <?php echo $a_bt; ?> <span class="text-cyan-400"><?php echo $ab_t; ?></span>
+                <?php echo $a_bt; ?> <br> <span class="text-cyan-400"><?php echo $ab_t; ?></span>
             </p>
             <button class="bg-slate-900 hover:bg-slate-800 active:bg-slate-700 focus:outline-none focus:ring focus:ring-violet-300 rounded-md px-3 py-2 text-cyan-500 font-serif  hover:text-cyan-400 shadow-md mt-10 cursor-pointer">Let's Collaborate and Build Something Amazing</button>
         </div>
