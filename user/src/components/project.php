@@ -9,14 +9,11 @@
             $project = mysqli_fetch_assoc($projects);
         ?>
 
-            <!-- Project Card -->
-
-            <!-- 1 Card Start -->
-                <div class="relative flex w-80 flex-col rounded-xl bg-slate-900 bg-clip-border text-slate-50 shadow-blue-500/20 transition-all hover:shadow-lg hover:shadow-blue-500/40 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none">
-                    <div class="relative mx-4 -mt-6 overflow-hidden rounded-xl bg-blue-gray-500 bg-clip-border text-white shadow-lg shadow-blue-gray-500/40 bg-gradient-to-r from-blue-500 to-blue-600">
-                        <div class="object-cover w-full h-full" id="imageContainer">
-                            <img src="../create-your-portfolio/project-image/<?php echo $project['pr_img']; ?>" alt="Man Image" class="object-cover w-full h-full" id="projectImage">
-                        </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+                <!-- 1st Card Start -->
+                <div class="relative flex flex-col rounded-xl bg-slate-900 bg-clip-border text-slate-50 shadow-blue-500/20 transition-all hover:shadow-lg hover:shadow-blue-500/40 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none">
+                    <div class="relative mx-4 -mt-6 overflow-hidden rounded-xl bg-blue-gray-500 bg-clip-border text-white shadow-lg shadow-blue-gray-500/40 bg-gradient-to-r from-blue-500 to-blue-600" style="height: auto;">
+                        <img src="../create-your-portfolio/project-image/<?php echo $project['pr_img']; ?>" alt="Project Image" class="object-cover w-full h-full">
                     </div>
 
                     <div class="p-6">
@@ -33,17 +30,13 @@
                             <a href="<?php echo $project['pr_repo']; ?>">Preview</a>
                         </button>
                     </div>
-
                 </div>
-          
-            l
-            <!-- 2 Card Start -->
-           
-                <div class="relative flex w-80 flex-col rounded-xl bg-slate-900 bg-clip-border text-slate-50 shadow-blue-500/20 transition-all hover:shadow-lg hover:shadow-blue-500/40 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none">
-                    <div class="relative mx-4 -mt-6 overflow-hidden rounded-xl bg-blue-gray-500 bg-clip-border text-white shadow-lg shadow-blue-gray-500/40 bg-gradient-to-r from-blue-500 to-blue-600">
-                        <div class="object-cover w-full h-full" id="imageContainer">
-                            <img src="../create-your-portfolio/project-image/<?php echo $project['pr_img2']; ?>" alt="Man Image" class="object-cover w-full h-full" id="projectImage">
-                        </div>
+                <!-- 1st Card End -->
+
+                <!-- 2nd Card Start -->
+                <div class="mt-12 relative flex flex-col rounded-xl bg-slate-900 bg-clip-border text-slate-50 shadow-blue-500/20 transition-all hover:shadow-lg hover:shadow-blue-500/40 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none">
+                    <div class="relative mx-4 -mt-6 overflow-hidden rounded-xl bg-blue-gray-500 bg-clip-border text-white shadow-lg shadow-blue-gray-500/40 bg-gradient-to-r from-blue-500 to-blue-600" style="height: auto;">
+                        <img src="../create-your-portfolio/project-image/<?php echo $project['pr_img2']; ?>" alt="Project Image" class="object-cover w-full h-full">
                     </div>
 
                     <div class="p-6">
@@ -60,17 +53,13 @@
                             <a href="<?php echo $project['pr_repo2']; ?>">Preview</a>
                         </button>
                     </div>
-
                 </div>
-            
-            l
-            <!-- 3 Card Start -->
-           
-                <div class="relative flex w-80 flex-col rounded-xl bg-slate-900 bg-clip-border text-slate-50 shadow-blue-500/20 transition-all hover:shadow-lg hover:shadow-blue-500/40 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none">
-                    <div class="relative mx-4 -mt-6 overflow-hidden rounded-xl bg-blue-gray-500 bg-clip-border text-white shadow-lg shadow-blue-gray-500/40 bg-gradient-to-r from-blue-500 to-blue-600">
-                        <div class="object-cover w-full h-full" id="imageContainer">
-                            <img src="../create-your-portfolio/project-image/<?php echo $project['pr_img3']; ?>" alt="Man Image" class="object-cover w-full h-full" id="projectImage">
-                        </div>
+                <!-- 2nd Card End -->
+
+                <!-- 3rd Card Start -->
+                <div class="mt-12 relative flex flex-col rounded-xl bg-slate-900 bg-clip-border text-slate-50 shadow-blue-500/20 transition-all hover:shadow-lg hover:shadow-blue-500/40 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none">
+                    <div class="relative mx-4 -mt-6 overflow-hidden rounded-xl bg-blue-gray-500 bg-clip-border text-white shadow-lg shadow-blue-gray-500/40 bg-gradient-to-r from-blue-500 to-blue-600" style="height: auto;">
+                        <img src="../create-your-portfolio/project-image/<?php echo $project['pr_img3']; ?>" alt="Project Image" class="object-cover w-full h-full">
                     </div>
 
                     <div class="p-6">
@@ -78,7 +67,7 @@
                             <?php echo $project['pr_tittle3']; ?>
                         </h5>
                         <p class="block font-sans text-base font-light leading-relaxed text-inherit antialiased">
-                            <?php echo $project['pr_desc']; ?>
+                            <?php echo $project['pr_desc3']; ?>
                         </p>
                     </div>
 
@@ -87,13 +76,14 @@
                             <a href="<?php echo $project['pr_repo3']; ?>">Preview</a>
                         </button>
                     </div>
-
                 </div>
-           
+                <!-- 3rd Card End -->
+            </div>
+
+
 
         <?php
         }
         ?>
     </div>
 </section>
-
