@@ -15,6 +15,10 @@ To run Portfolio Jila locally, follow these steps:
 
 1. Clone the repository:
 
+```
+git clone https://github.com/your-username/portfolio-jila.git
+```
+
 2. Import the provided SQL database file (`portfolio_jila.sql`) into your MySQL database.
 
 3. Configure the database connection settings in the `config.php` file.
