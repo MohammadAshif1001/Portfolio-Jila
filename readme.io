@@ -1,3 +1,20 @@
+# Portfolio Jila
+
+Portfolio Jila is a user-friendly project that enables individuals to create personalized portfolio websites effortlessly by completing a straightforward form. With Portfolio Jila, users can generate their portfolios instantly without any coding requirements. This project utilizes HTML, Tailwind CSS, PHP for the backend, and SQL for database management.
+
+## Features
+
+- **Simplified Portfolio Creation:** Users can create their own portfolio websites by completing a simple form, eliminating the need for coding knowledge.
+- **Instant Generation:** Portfolios are generated within seconds upon form submission.
+- **Technology Stack:** The project is built using HTML for structure, Tailwind CSS for styling, and PHP for backend functionality.
+- **Database Integration:** Portfolio Jila incorporates an SQL database for storing user information and portfolio data.
+
+## Installation
+
+To run Portfolio Jila locally, follow these steps:
+
+1. Clone the repository:
+
 2. Import the provided SQL database file (`portfolio_jila.sql`) into your MySQL database.
 
 3. Configure the database connection settings in the `config.php` file.
