@@ -53,6 +53,7 @@ if (mysqli_num_rows($result) > 0) { // Check if user exists
     include_once("components/header.php");
     include_once("components/social.php");
     include_once("components/project.php");
+    include_once("components/timeline.php");
     include_once("components/service.php");
     include_once("components/contact-us.php");
     include_once("components/footer.php");

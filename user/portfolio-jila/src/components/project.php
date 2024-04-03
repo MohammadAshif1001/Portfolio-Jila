@@ -1,3 +1,5 @@
+
+
 <section id="projects">
     <h2 class="text-4xl font-extrabold text-gray-800 text-center mt-10 mb-8">Projects</h2>
     <div class="flex flex-col m-2 mt-16 md:flex-row justify-evenly space-y-4 md:space-y-0 md:space-x-8">
