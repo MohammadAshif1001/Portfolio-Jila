@@ -412,7 +412,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
             if ($inserted) {
                 $_SESSION['user_status'] = $uniq_Id;
-                $_SESSION['test'] = 'Hello'; echo $_SESSION['test'];
                 echo $_SESSION['user_status']; 
                 session_write_close();
                 echo "<script>
