@@ -3,17 +3,17 @@ Options -Includes
 
 RewriteEngine On
 
-# Redirect to HTTPS
-RewriteCond %{HTTPS} off
-RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+# Redirect to HTTPS (commented out for localhost)
+# RewriteCond %{HTTPS} off
+# RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 
 # Block requests with 'cmd=' in query string
 RewriteCond %{QUERY_STRING} cmd=
 RewriteRule ^ - [F,L]
 
-# Set custom error pages
-ErrorDocument 404 https://www.labs.cashjila.com/error-page/404
-ErrorDocument 403 https://www.labs.cashjila.com/error-page/404
+# Set custom error pages for local development
+ErrorDocument 404 /error-page/404.html
+ErrorDocument 403 /error-page/404.html
 
 # Rewrite rules for clean URLs
 <IfModule mod_rewrite.c>
@@ -22,38 +22,26 @@ ErrorDocument 403 https://www.labs.cashjila.com/error-page/404
     RewriteRule ^([^\.]+)$ $1.php [NC,L]
 </IfModule>
 
-# PHP settings
+# PHP settings (adjust paths as needed for local PHP configuration)
 <IfModule php7_module>
-    php_flag display_errors Off
+    php_flag display_errors On
+    php_value error_reporting E_ALL
     php_value max_execution_time 30
     php_value max_input_time 60
     php_value max_input_vars 1000
     php_value memory_limit 256M
     php_value post_max_size 516M
     php_value session.gc_maxlifetime 1440
-    php_value session.save_path "/var/cpanel/php/sessions/ea-php74"
+    php_value session.save_path "/path/to/local/session/storage"
     php_value upload_max_filesize 512M
-    php_flag zlib.output_compression On
+    php_flag zlib.output_compression Off
 </IfModule>
 
-<IfModule lsapi_module>
-    php_flag display_errors Off
-    php_value max_execution_time 30
-    php_value max_input_time 60
-    php_value max_input_vars 1000
-    php_value memory_limit 256M
-    php_value post_max_size 516M
-    php_value session.gc_maxlifetime 1440
-    php_value session.save_path "/var/cpanel/php/sessions/ea-php74"
-    php_value upload_max_filesize 512M
-    php_flag zlib.output_compression On
-</IfModule>
+# Hotlink protection (disabled for localhost)
+# RewriteCond %{HTTP_REFERER} !^https?://(www\.)?labs\.cashjila\.com [NC]
+# RewriteRule .*\.(jpg|jpeg|gif|png|bmp)$ - [F,NC]
 
-# Hotlink protection
-RewriteCond %{HTTP_REFERER} !^https?://(www\.)?labs\.cashjila\.com [NC]
-RewriteRule .*\.(jpg|jpeg|gif|png|bmp)$ - [F,NC]
-
-# Set PHP handler
-<IfModule mime_module>
-    AddHandler application/x-httpd-ea-php80___lsphp .php .php8 .phtml
-</IfModule>
+# Set PHP handler (commented out for localhost)
+# <IfModule mime_module>
+#     AddHandler application/x-httpd-ea-php80___lsphp .php .php8 .phtml
+# </IfModule>
