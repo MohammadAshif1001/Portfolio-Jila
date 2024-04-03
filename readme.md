@@ -32,6 +32,10 @@ git clone https://github.com/your-username/portfolio-jila.git
 
 4. Submit the form, and your portfolio website will be generated instantly.
 
+## Use for Generating Css
+
+-- $ npx tailwindcss -i ./src/global.css -o ./src/include/style.css --watch
+
 ## Contributing
 
 Contributions to Portfolio Jila are welcome! To contribute, please fork the repository and submit a pull request with your proposed changes.
