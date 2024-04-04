@@ -34,7 +34,7 @@ git clone https://github.com/your-username/portfolio-jila.git
 
 ## Use for Generating Css
 
--- $ npx tailwindcss -i ./src/global.css -o ./src/include/style.css --watch
+--  npx tailwindcss -i ./src/global.css -o ./src/include/style.css --watch
 
 ## Contributing
 

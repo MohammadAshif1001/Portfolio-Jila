@@ -10,6 +10,9 @@
     <!-- FavIcon -->
     <link href="include/favicons_io/favicon.ico" rel="icon">
 
+    <!--Animation Library-->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
     <script src="https://unpkg.com/@popperjs/core@2/dist/umd/popper.min.js"></script>
     <script src="https://unpkg.com/tippy.js@6/dist/tippy-bundle.umd.js"></script>
 
@@ -109,15 +112,16 @@
         <div class="avatar max-w-[350px] max-h-[520px]">
             <!-- <img src="include/img/female-developer.png" alt="Woman Image"> -->
             <?php
-if($gen == 1){
-    $gender = 'female.png';
-}else{
-    $gender = 'male.png';  
-}
-?>
+            if ($gen == 1) {
+                $gender = 'female.png';
+            } else {
+                $gender = 'male.png';
+            }
+            ?>
 
-           <img src="include/img/<?php echo htmlspecialchars($gender); ?>" alt="Man Image" class="max-w-[350px] max-h-[520px]">
+            <img src="include/img/<?php echo htmlspecialchars($gender); ?>" alt="Man Image">
 
         </div>
 
     </div>
+    
