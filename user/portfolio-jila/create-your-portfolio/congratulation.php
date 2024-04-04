@@ -34,7 +34,7 @@ if ($result) {
     // Redirect the user to the specified URL
     echo "<script>
             alert('Congratulations! Your Profile Successfully Created.  $user_id;');
-            window.location.href = 'https://www.labs.cashjila.com/portfolio-jila/src/?id=$user_id';
+            window.location.href = '$localhost/portfolio-jila/src/?id=$user_id';
           </script>";
     exit; // Ensure script stops executing after redirection
 } else {

@@ -73,7 +73,7 @@
     }
 </style>
 
-<body class="bg-slate-950 scroll-smooth">
+<body class="overflow-x-hidden bg-slate-950 scroll-smooth">
     <div id="particles" class="absolute w-full h-full top-0 left-0 z-[-10] opacity-50"></div>
 
     <!-- NavStart -->
@@ -92,7 +92,8 @@
             <li id="Contact" class="hover-underline-animation"><a href="#contact-us">Say Hii!</a></li>
         </ul>
 
-        <button class="bg-slate-900 hover:bg-slate-800 active:bg-slate-700 focus:outline-none focus:ring focus:ring-violet-300 rounded-md px-3 py-2 text-cyan-500 font-serif  hover:text-cyan-400 shadow-md cursor-pointer"><a href="../create-your-portfolio/">Create Your Profile</a></button>
+        <button class="md:hidden bg-slate-900 hover:bg-slate-800 active:bg-slate-700 focus:outline-none focus:ring focus:ring-violet-300 rounded-md px-3 py-2 text-cyan-500 font-serif  hover:text-cyan-400 shadow-md cursor-pointer"><a href="<?php echo $whatsapp; ?>">Say Hii!</a></button>
+        <button class="hidden md:block bg-slate-900 hover:bg-slate-800 active:bg-slate-700 focus:outline-none focus:ring focus:ring-violet-300 rounded-md px-3 py-2 text-cyan-500 font-serif  hover:text-cyan-400 shadow-md cursor-pointer"><a href="../create-your-portfolio/">Create Your Profile</a></button>
 
     </nav>
     <!-- Nav End -->
@@ -119,7 +120,7 @@
             }
             ?>
 
-            <img src="include/img/<?php echo htmlspecialchars($gender); ?>" alt="Man Image">
+            <img src="include/img/<?php echo htmlspecialchars($gender); ?>" alt="Man Image" >
 
         </div>
 

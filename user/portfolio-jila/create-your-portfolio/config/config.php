@@ -5,7 +5,7 @@ $dbpass = "";
 $dbname = "protfolio_jila";
 
 $conn = mysqli_connect($dbhost , $dbuser , $dbpass , $dbname);
-$localhost = "http://localhost/Project2024/Portfolio-Jila/";
+$localhost = "https://localhost/project-2024/Portfolio-Jila/user/";
 if(!isset($conn)){
     echo die("Database connection failed");
 }

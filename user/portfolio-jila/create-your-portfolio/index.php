@@ -412,11 +412,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
             if ($inserted) {
                 $_SESSION['user_status'] = $uniq_Id;
-                echo $_SESSION['user_status']; 
                 session_write_close();
                 echo "<script>
                             alert('Congratulations! Your Profile Successfully Created.');
-                            window.location.href = 'congratulation';
+                            window.location.href = 'services';
                           </script>";
             } else {
                 echo "Error inserting projects";

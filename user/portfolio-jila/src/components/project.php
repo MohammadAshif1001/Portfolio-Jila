@@ -34,7 +34,6 @@
                     </div>
                 </div>
                 <!-- 1st Card End -->
-
                 <!-- 2st Card Start -->
                 <div data-aos="zoom-in-up" data-aos-delay="50" data-aos-duration="1500" class="relative flex flex-col rounded-xl bg-slate-900 bg-clip-border text-slate-50 shadow-blue-500/20 transition-all hover:shadow-lg hover:shadow-blue-500/40 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none mt-6">
                     <div class="relative mx-4 -mt-6 overflow-hidden rounded-xl bg-blue-gray-500 bg-clip-border text-white shadow-lg shadow-blue-gray-500/40 bg-gradient-to-r from-blue-500 to-blue-600" style="height: 24rem;">
