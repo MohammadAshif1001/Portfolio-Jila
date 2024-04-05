@@ -1,4 +1,4 @@
-<section id="projects" >
+<section id="projects">
     <h2 class="text-4xl font-extrabold text-gray-800 text-center mt-10 mb-8">Projects</h2>
     <div class="flex flex-col m-2 mt-16 md:flex-row justify-evenly space-y-4 md:space-y-0 md:space-x-8">
 
@@ -11,8 +11,8 @@
 
             <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
                 <!-- 1st Card Start -->
-                <div data-aos="zoom-in-right" data-aos-delay="50" data-aos-duration="1500" class="relative flex flex-col rounded-xl bg-slate-900 bg-clip-border text-slate-50 shadow-blue-500/20 transition-all hover:shadow-lg hover:shadow-blue-500/40 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none mt-6">
-                    <div class="relative mx-4 -mt-6 overflow-hidden rounded-xl bg-blue-gray-500 bg-clip-border text-white shadow-lg shadow-blue-gray-500/40 bg-gradient-to-r from-blue-500 to-blue-600" style="height: 24rem;">
+                <div data-aos="zoom-in-right" data-aos-delay="50" data-aos-duration="1500" class="relative flex flex-col justify-between rounded-xl bg-slate-900 bg-clip-border text-slate-50 shadow-blue-500/20 transition-all hover:shadow-lg hover:shadow-blue-500/40 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none mt-8">
+                    <div class="relative mx-4 -mt-6 overflow-hidden rounded-xl bg-blue-gray-500 bg-clip-border text-white shadow-lg shadow-blue-gray-500/40 bg-gradient-to-r from-slate-900 to-slate-950 md:h-80">
                         <img src="../create-your-portfolio/project-image/<?php echo $project['pr_img']; ?>" alt="Project Image" class="object-contain w-full h-full">
                     </div>
 
@@ -33,10 +33,15 @@
                         </button>
                     </div>
                 </div>
+                
+
+
+
+
                 <!-- 1st Card End -->
                 <!-- 2st Card Start -->
-                <div data-aos="zoom-in-up" data-aos-delay="50" data-aos-duration="1500" class="relative flex flex-col rounded-xl bg-slate-900 bg-clip-border text-slate-50 shadow-blue-500/20 transition-all hover:shadow-lg hover:shadow-blue-500/40 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none mt-6">
-                    <div class="relative mx-4 -mt-6 overflow-hidden rounded-xl bg-blue-gray-500 bg-clip-border text-white shadow-lg shadow-blue-gray-500/40 bg-gradient-to-r from-blue-500 to-blue-600" style="height: 24rem;">
+                <div data-aos="zoom-in-up" data-aos-delay="50" data-aos-duration="1500" class="relative flex flex-col justify-between rounded-xl bg-slate-900 bg-clip-border text-slate-50 shadow-blue-500/20 transition-all hover:shadow-lg hover:shadow-blue-500/40 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none mt-8">
+                    <div class="relative mx-4 -mt-6 overflow-hidden rounded-xl bg-blue-gray-500 bg-clip-border text-white shadow-lg shadow-blue-gray-500/40 bg-gradient-to-r from-slate-900 to-slate-950 md:h-80">
                         <img src="../create-your-portfolio/project-image/<?php echo $project['pr_img2']; ?>" alt="Project Image" class="object-contain w-full h-full">
                     </div>
 
@@ -59,8 +64,8 @@
                 </div>
                 <!-- 2st Card End -->
                 <!-- 3st Card Start -->
-                <div data-aos="zoom-in-left" data-aos-delay="50" data-aos-duration="1500" class="relative flex flex-col rounded-xl bg-slate-900 bg-clip-border text-slate-50 shadow-blue-500/20 transition-all hover:shadow-lg hover:shadow-blue-500/40 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none mt-6">
-                    <div class="relative mx-4 -mt-6 overflow-hidden rounded-xl bg-blue-gray-500 bg-clip-border text-white shadow-lg shadow-blue-gray-500/40 bg-gradient-to-r from-blue-500 to-blue-600" style="height: 24rem;">
+                <div data-aos="zoom-in-left" data-aos-delay="50" data-aos-duration="1500" class="relative flex flex-col justify-between rounded-xl bg-slate-900 bg-clip-border text-slate-50 shadow-blue-500/20 transition-all hover:shadow-lg hover:shadow-blue-500/40 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none mt-8">
+                    <div class="relative mx-4 -mt-6 overflow-hidden rounded-xl bg-blue-gray-500 bg-clip-border text-white shadow-lg shadow-blue-gray-500/40 bg-gradient-to-r from-slate-900 to-slate-950 md:h-80">
                         <img src="../create-your-portfolio/project-image/<?php echo $project['pr_img3']; ?>" alt="Project Image" class="object-contain w-full h-full">
                     </div>
 
@@ -84,8 +89,6 @@
                 <!-- 3st Card End -->
 
             </div>
-
-
 
         <?php
         }

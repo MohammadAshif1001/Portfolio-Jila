@@ -74,6 +74,8 @@
 </style>
 
 <body class="overflow-x-hidden bg-slate-950 scroll-smooth">
+
+
     <div id="particles" class="absolute w-full h-full top-0 left-0 z-[-10] opacity-50"></div>
 
     <!-- NavStart -->
@@ -92,7 +94,7 @@
             <li id="Contact" class="hover-underline-animation"><a href="#contact-us">Say Hii!</a></li>
         </ul>
 
-        <button class="md:hidden bg-slate-900 hover:bg-slate-800 active:bg-slate-700 focus:outline-none focus:ring focus:ring-violet-300 rounded-md px-3 py-2 text-cyan-500 font-serif  hover:text-cyan-400 shadow-md cursor-pointer"><a href="<?php echo $whatsapp; ?>">Say Hii!</a></button>
+        <button class="md:hidden bg-slate-900 hover:bg-slate-800 active:bg-slate-700 focus:outline-none focus:ring focus:ring-violet-300 rounded-md px-3 py-2 text-cyan-500 font-serif  hover:text-cyan-400 shadow-md cursor-pointer"><a href="<?php echo $whatsapp; ?>" target="_blank">Say Hii!</a></button>
         <button class="hidden md:block bg-slate-900 hover:bg-slate-800 active:bg-slate-700 focus:outline-none focus:ring focus:ring-violet-300 rounded-md px-3 py-2 text-cyan-500 font-serif  hover:text-cyan-400 shadow-md cursor-pointer"><a href="../create-your-portfolio/">Create Your Profile</a></button>
 
     </nav>
@@ -108,7 +110,7 @@
             <p class="mt-5 text-gray-400">
                 <?php echo $a_bt; ?> <br> <span class="text-cyan-400"><?php echo $ab_t; ?></span>
             </p>
-            <button class="bg-slate-900 hover:bg-slate-800 active:bg-slate-700 focus:outline-none focus:ring focus:ring-violet-300 rounded-md px-3 py-2 text-cyan-500 font-serif  hover:text-cyan-400 shadow-md mt-10 cursor-pointer">Let's Collaborate and Build Something Amazing</button>
+            <button class="bg-slate-900 hover:bg-slate-800 active:bg-slate-700 focus:outline-none focus:ring focus:ring-violet-300 rounded-md px-3 py-2 text-cyan-500 font-serif  hover:text-cyan-400 shadow-md mt-10 cursor-pointer"><a href="<?php echo $whatsapp; ?>" target="_blank">Let's Collaborate and Build Something Amazing</a></button>
         </div>
         <div class="avatar max-w-[350px] max-h-[520px]">
             <!-- <img src="include/img/female-developer.png" alt="Woman Image"> -->
