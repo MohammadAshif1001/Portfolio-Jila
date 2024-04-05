@@ -231,7 +231,7 @@ window.addEventListener('DOMContentLoaded', function() {
                         </div>
 
                         <div class="mb-4">
-                            <input class="  mt-1 p-2 w-full bg-gray-700 border border-gray-600 rounded-md text-white" type="hidden" id="rep" name="project" value="1">
+                            <input class="mt-1 p-2 w-full bg-gray-700 border border-gray-600 rounded-md text-white" type="hidden" id="rep" name="project" value="1">
                         </div>
                     </div>
                     <div class="flex justify-center">
@@ -414,7 +414,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 $_SESSION['user_status'] = $uniq_Id;
                 session_write_close();
                 echo "<script>
-                            alert('Congratulations! Your Profile Successfully Created.');
+                            alert('Last Step Update Your Service Section');
                             window.location.href = 'services';
                           </script>";
             } else {

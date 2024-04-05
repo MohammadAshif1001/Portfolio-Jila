@@ -1,12 +1,16 @@
-<?php
+<?php 
+session_start();
 
 include_once("config/config.php");
 $bg_color = "slate-950";
 
 if (isset($_GET["id"]) && $_GET["id"] != '') {
-    $Id = $_GET["id"];
+    $temp = $_GET["id"];
+    $Id = substr($temp, 8, -12);
+    $_SESSION['profile'] = $temp;
 } else {
     $Id = 99;
+    $_SESSION['profile'] = "Mohammad99Ashif9696841";
 }
 
 $user_data_query = "SELECT * FROM `users` WHERE user_id = ?";

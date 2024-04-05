@@ -77,7 +77,31 @@
 
 
     <div id="particles" class="absolute w-full h-full top-0 left-0 z-[-10] opacity-50"></div>
+    <?php
+            if (isset($_SESSION['message'])) : ?>
+                <!-- Alert message -->
+                <div id="alert" class="flex items-center justify-center text-center mt-4 md:-mb-4 mx-auto p-2">
+                    <div class="p-1 bg-indigo-800 items-center text-indigo-100 rounded-xl leading-none lg:rounded-full flex lg:inline-flex" role="alert">
+                        <span class="flex rounded-full bg-indigo-500 uppercase px-2 py-1 text-xs font-bold mr-3">Hello</span>
+                        <span class="font-semibold mr-2 text-sm text-left flex-auto"><?php echo $_SESSION['message']; ?></span>
+                        
+                    </div>
+                </div>
 
+
+                <script>
+                    // Remove alert after 5 seconds
+                    setTimeout(function() {
+                        document.getElementById('alert').remove();
+                    }, 5000);
+
+                    // Close button functionality
+                    document.getElementById('closeBtn').addEventListener('click', function() {
+                        document.getElementById('alert').remove();
+                    });
+                </script>
+<?php unset($_SESSION['message']); ?>
+            <?php endif; ?>
     <!-- NavStart -->
     <nav class="max-w-screen-xl mx-auto px-4 pb-8 flex items-center justify-between space-x-8">
         <div id="links" class="w-24 h-24 rounded-full">
@@ -103,6 +127,8 @@
 
     <div class="md:flex md:justify-between items-center">
         <div class="content px-4">
+            
+
             <h4 class="mb-5 text-white text-md font-medium"><?php echo $bio; ?></h4>
             <span class="blur"></span>
             <span class="blur"></span>
@@ -122,9 +148,8 @@
             }
             ?>
 
-            <img src="include/img/<?php echo htmlspecialchars($gender); ?>" alt="Man Image" >
+            <img src="include/img/<?php echo htmlspecialchars($gender); ?>" alt="Man Image">
 
         </div>
 
     </div>
-    
