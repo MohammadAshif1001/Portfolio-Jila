@@ -1,4 +1,52 @@
-<?php session_start()?>
+<?php 
+session_start();
+
+// Include PHPMailer dependencies
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\SMTP;
+use PHPMailer\PHPMailer\Exception;
+
+// Function to send mail
+function sendMail($otp_mail, $otp)
+{
+    require("src/PHPMailer.php");
+    require("src/SMTP.php");
+    require("src/Exception.php");
+
+    $mail = new PHPMailer(true);
+
+    try {
+        // SMTP settings
+        $mail->isSMTP(); // Send using SMTP
+        $mail->Host       = 'smtp.gmail.com'; // SMTP server
+        $mail->SMTPAuth   = true; // Enable SMTP authentication
+        $mail->Username   = 'portfoliojila@gmail.com'; // SMTP username
+        $mail->Password   = 'uujdwlhqfulojtcz'; // SMTP password
+        $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS; // Enable implicit TLS encryption
+        $mail->Port       = 465; // TCP port
+
+        // Recipients
+        $mail->setFrom('portfoliojila@gmail.com', 'labs.cashjila.com');
+        $mail->addAddress($otp_mail); // Add recipient
+
+        // Content
+        $mail->isHTML(true);
+        $mail->Subject = 'OTP Verification'; // Email subject
+        $mail->Body = "<p>Dear User,</p>
+                        <p>Your One Time Password (OTP) for verification:</p>
+                        <h2>$otp</h2>
+                        <p>Thank you for choosing our platform.</p>
+                        <p>Best regards,<br>Portfolio Jila</p>"; // Email body
+
+        $mail->send();
+        return true;
+    } catch (Exception $e) {
+        return false;
+    }
+}
+
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -35,37 +83,15 @@
             transition: width 0.6s ease;
         }
     </style>
+    <script>
+        $(window).bind("pageshow", function() {
+            var form = $('form');
+            form[0].reset();
+            form.find(':input').not(':button,:submit,:reset,:hidden').trigger('change');
+        });
+    </script>
 </head>
-<script>
-window.addEventListener('DOMContentLoaded', function() {
-    const inputs = document.querySelectorAll('input[type="text"]');
-    const textareas = document.querySelectorAll('textarea');
-    const inputWordLimit = 100; // Word limit for input fields
-    const textareaWordLimit = 500; // Word limit for textarea
 
-    // Function to handle word limit for input fields
-    inputs.forEach(input => {
-        input.addEventListener('input', function() {
-            const words = this.value.trim().split(/\s+/);
-            if (words.length > inputWordLimit) {
-                alert(`Word limit exceeded! Maximum ${inputWordLimit} words allowed.`);
-                this.value = words.slice(0, inputWordLimit).join(' ');
-            }
-        });
-    });
-
-    // Function to handle word limit for textarea fields
-    textareas.forEach(textarea => {
-        textarea.addEventListener('input', function() {
-            const words = this.value.trim().split(/\s+/);
-            if (words.length > textareaWordLimit) {
-                alert(`Word limit exceeded! Maximum ${textareaWordLimit} words allowed.`);
-                this.value = words.slice(0, textareaWordLimit).join(' ');
-            }
-        });
-    });
-});
-</script>
 <body>
     <div id="app" class="flex flex-col items-center gap-5">
         <div id="regiration_form" class="w-full mx-auto relative overflow-hidden z-10 bg-slate-950 p-8 rounded-lg shadow-md before:w-24 before:h-24 before:absolute before:bg-purple-600 before:rounded-full before:-z-10 before:blur-2xl after:w-32 after:h-32 after:absolute after:bg-sky-400 after:rounded-full after:-z-10 after:blur-xl after:top-24 after:-right-12">
@@ -75,7 +101,7 @@ window.addEventListener('DOMContentLoaded', function() {
             <div class="progress">
                 <div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuemin="0" aria-valuemax="100"></div>
             </div>
-            <form method="POST" enctype="multipart/form-data" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']) ?>">
+            <form method="POST" enctype="multipart/form-data" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']) ?>" id="dataForm">
                 <fieldset>
                     <div class="mb-4">
                         <label class="block text-sm font-medium text-gray-300" for="name">Full Name</label>
@@ -95,11 +121,11 @@ window.addEventListener('DOMContentLoaded', function() {
                     </div>
                     <div class="mb-4">
                         <label class="block text-sm font-medium text-gray-300" for="adrs">Your Address (Current Location)</label>
-                        <input class="  mt-1 p-2 w-full bg-gray-700 border border-gray-600 rounded-md text-white" type="text" id="adrs" name="addres" placeholder="India" required>
+                        <input class="mt-1 p-2 w-full bg-gray-700 border border-gray-600 rounded-md text-white" type="text" id="adrs" name="addres" placeholder="India" required>
                     </div>
                     <div class="mb-4">
                         <label class="block text-sm font-medium text-gray-300" for="Bio">Bio - Title</label>
-                        <input class="  mt-1 p-2 w-full bg-gray-700 border border-gray-600 rounded-md text-white" type="text" id="bio" name="bio" placeholder="Your Creative Vision, My Technical Expertise" required>
+                        <input class="mt-1 p-2 w-full bg-gray-700 border border-gray-600 rounded-md text-white" type="text" id="bio" name="bio" placeholder="Your Creative Vision, My Technical Expertise" required>
                     </div>
 
                     <div class="mb-4">
@@ -116,16 +142,18 @@ window.addEventListener('DOMContentLoaded', function() {
                         <input class="mt-1 p-2 w-full bg-gray-700 border border-gray-600 rounded-md text-white" type="file" id="resume" name="cv" accept=".pdf" required>
                         <p class="text-cyan-400 text-xs">Upload PDF (Max 50 KB)</p>
                     </div>
-                    
+
                     <div class="mb-4">
-    <select name="gender" id="gender" class="mt-1 p-2 w-full bg-gray-700 border border-gray-600 rounded-md text-white">
-        <option value="0">Male</option>
-        <option value="1">Female</option>
-    </select>
-    <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
-        <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95a1 1 0 0 1-1.414 1.414l-3.536-3.535a1 1 0 0 1 0-1.414l3.536-3.536a1 1 0 1 1 1.414 1.414L6.414 8.95H18a1 1 0 1 1 0 2H6.414l2.879 2.879z"/></svg>
-    </div>
-</div>
+                        <select name="gender" id="gender" class="mt-1 p-2 w-full bg-gray-700 border border-gray-600 rounded-md text-white">
+                            <option value="0">Male</option>
+                            <option value="1">Female</option>
+                        </select>
+                        <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
+                            <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                                <path d="M9.293 12.95a1 1 0 0 1-1.414 1.414l-3.536-3.535a1 1 0 0 1 0-1.414l3.536-3.536a1 1 0 1 1 1.414 1.414L6.414 8.95H18a1 1 0 1 1 0 2H6.414l2.879 2.879z" />
+                            </svg>
+                        </div>
+                    </div>
 
                     <div class="flex justify-center">
                         <input type="button" name="next" class="next mt-4 bg-gradient-to-r from-purple-600 via-purple-400 to-blue-500 text-white px-4 py-2 font-bold rounded-md hover:opacity-80" value="Next" />
@@ -158,7 +186,7 @@ window.addEventListener('DOMContentLoaded', function() {
                         <input class="mt-1 p-2 w-full bg-gray-700 border border-gray-600 rounded-md text-white" type="text" id="WP" name="w_a" placeholder="+9198987456123 (use country code compulsory)" required>
                     </div>
 
-                    
+
 
                     <div class="flex justify-center">
                         <input type="button" name="previous" class="previous mt-4 bg-gradient-to-r from-purple-600 via-purple-400 to-blue-500 text-white px-4 py-2 font-bold rounded-md hover:opacity-80" value="Previous" />
@@ -237,12 +265,13 @@ window.addEventListener('DOMContentLoaded', function() {
                     <div class="flex justify-center">
                         <input type="button" name="previous" class="previous mt-4 bg-gradient-to-r from-purple-600 via-purple-400 to-blue-500 text-white px-4 py-2 font-bold rounded-md hover:opacity-80" value="Previous" />
                         <div class="ml-4"></div>
-                        <input class="btn mt-4 bg-gradient-to-r from-purple-600 via-purple-400 to-blue-500 text-white px-4 py-2 font-bold rounded-md hover:opacity-80" type="submit" Value="Update Profile">
+                        <input class="btn mt-4 bg-gradient-to-r from-purple-600 via-purple-400 to-blue-500 text-white px-4 py-2 font-bold rounded-md hover:opacity-80" id="submitBtn" type="submit" Value="Update Profile">
                     </div>
                 </fieldset>
             </form>
         </div>
     </div>
+
 
     <script type="text/javascript">
         $(document).ready(function() {
@@ -292,6 +321,43 @@ window.addEventListener('DOMContentLoaded', function() {
             return true; // Allow form submission
         }
     </script>
+    <script>
+        window.addEventListener('DOMContentLoaded', function() {
+            const inputs = document.querySelectorAll('input[type="text"]');
+            const textareas = document.querySelectorAll('textarea');
+            const inputWordLimit = 100; // Word limit for input fields
+            const textareaWordLimit = 500; // Word limit for textarea
+
+            // Function to handle word limit for input fields
+            inputs.forEach(input => {
+                input.addEventListener('input', function() {
+                    const words = this.value.trim().split(/\s+/);
+                    if (words.length > inputWordLimit) {
+                        alert(`Word limit exceeded! Maximum ${inputWordLimit} words allowed.`);
+                        this.value = words.slice(0, inputWordLimit).join(' ');
+                    }
+                });
+            });
+
+            // Function to handle word limit for textarea fields
+            textareas.forEach(textarea => {
+                textarea.addEventListener('input', function() {
+                    const words = this.value.trim().split(/\s+/);
+                    if (words.length > textareaWordLimit) {
+                        alert(`Word limit exceeded! Maximum ${textareaWordLimit} words allowed.`);
+                        this.value = words.slice(0, textareaWordLimit).join(' ');
+                    }
+                });
+            });
+        });
+    </script>
+
+    <script>
+        if (window.history.replaceState) {
+            window.history.replaceState(null, null, window.location.href);
+        }
+    </script>
+
 
 </body>
 
@@ -321,8 +387,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $file_name = basename($_FILES["cv"]["name"]);
         $cv_l = $upload_dir . $file_name;
         if (move_uploaded_file($_FILES["cv"]["tmp_name"], $cv_l)) {
-            echo $_SESSION['status'] = $uniq_Id;
-            
+            echo " ";
         } else {
             echo "Error in uploading your Resume.";
         }
@@ -410,19 +475,33 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $project_data->bind_param("sssssssssssss", $uniq_Id,  $title, $title2, $title3, $description, $description2, $description3, $new_file_name_N_img, $new_file_name_N_img2, $new_file_name_N_img3, $repo, $repo2, $repo3);
             $inserted = $project_data->execute();
 
-            if ($inserted) {
+
+            //gen rand string
+            function generateRandomString($length = 10)
+            {
+                $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+                $randomString = '';
+                for ($i = 0; $i < $length; $i++) {
+                    $randomString .= $characters[rand(0, strlen($characters) - 1)];
+                }
+                return $randomString;
+            }
+
+            // gen key ou user id
+            $otp = generateRandomString(6);
+
+            // Send mail with generated key
+            if ($inserted && sendMail($user_email, $otp)) {
                 $_SESSION['user_status'] = $uniq_Id;
+                $_SESSION['otp'] = $otp;
                 session_write_close();
                 echo "<script>
-                            alert('Last Step Update Your Service Section');
+                            alert('Last Step Update Your Service Section & Fill OTP');
                             window.location.href = 'services';
-                          </script>";
+                      </script>";
             } else {
                 echo "Error inserting projects";
             }
-
-
-            
         } else {
             echo "Error inserting projects";
         }
@@ -432,13 +511,13 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
 
 
-    
-    // Close the prepared statements:) 
-    
 
-$project_data->close();
-                $update_details->close();
-                $social_links->close();
+    // Close the prepared statements:) 
+
+
+    $project_data->close();
+    $update_details->close();
+    $social_links->close();
     // Close the database connection
     $conn->close();
 } else {

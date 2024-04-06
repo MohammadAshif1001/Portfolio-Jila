@@ -6,6 +6,7 @@ if (!isset($_SESSION['user_status'])) {
     header("Location: https://www.labs.cashjila.com/error-page/404");
     exit; // Stop script execution after redirection
 }
+$OtpValid = "false";
 ?>
 
 
@@ -47,6 +48,7 @@ if (!isset($_SESSION['user_status'])) {
             transition: width 0.6s ease;
         }
     </style>
+
 </head>
 
 <script>
@@ -86,7 +88,7 @@ if (!isset($_SESSION['user_status'])) {
             <div class="flex justify-center">
                 <h2 class="text-2xl font-bold text-white mb-6">Step into the Spotlight: Publish Your Portfolio</h2>
             </div>
-            <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="POST">
+            <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="POST">
                 <!-- Service 1 Details -->
                 <h3 class="text-white text-xl mb-2">Service 1 Details</h3>
                 <div class="mb-4">
@@ -129,66 +131,103 @@ if (!isset($_SESSION['user_status'])) {
                     <label for="price_range_3" class="block text-sm font-medium text-gray-300">Price Range:</label>
                     <input type="text" id="price_range_3" name="price_range_3" required placeholder="e.g. $50 - $100" class="mt-1 p-2 w-full bg-gray-700 border border-gray-600 rounded-md text-white"><br><br>
                 </div>
-                <input type="hidden" id="s_id" name="s_id" value="<?php echo $_SESSION['user_status']; ?>">
+                <!-- OTP Input -->
+                <div class="mb-4">
+                    <label for="otp" class="block text-sm font-medium text-gray-300">Enter OTP:</label>
+                    <input type="text" id="otp" name="otp" required placeholder="Enter 6-digit OTP" class="mt-1 p-2 w-full bg-gray-700 border border-gray-600 rounded-md text-white">
+                    <p class="text-gray-400 text-sm mt-1">Check your email, OTP has been sent.</p>
+                </div>
+
+                <input type="hidden" id="s_id" name="s_id" value="<?php echo htmlspecialchars($_SESSION['user_status']); ?>">
+
                 <div class="flex justify-center">
-                    <input type="submit" value="Update" class="btn mt-4 bg-gradient-to-r from-purple-600 via-purple-400 to-blue-500 text-white px-4 py-2 font-bold rounded-md hover:opacity-80">
+                    <button id="verifyOTPBtn" type="button" class="btn mt-4 bg-gradient-to-r from-purple-600 via-purple-400 to-blue-500 text-white px-4 py-2 font-bold rounded-md hover:opacity-80" onclick="validateOTP()">
+                        Verify OTP
+                    </button>
+                </div>
+
+                <div class="flex justify-center" style="display: none;" id="updateBtnContainer">
+                    <input type="submit" id="submitBtn" value="Update" class="btn mt-4 bg-gradient-to-r from-purple-600 via-purple-400 to-blue-500 text-white px-4 py-2 font-bold rounded-md hover:opacity-80">
                 </div>
             </form>
 
+            <script>
+                // Define the generated OTP here
+                var generatedOTP = '<?php echo htmlspecialchars($_SESSION['otp']); ?>';
+
+                function validateOTP() {
+                    // Get the value entered by the user
+                    var enteredOTP = document.getElementById('otp').value;
+
+                    // Check if the entered OTP matches the generated OTP
+                    if (enteredOTP === generatedOTP) {
+                        alert('Correct OTP.');
+                        // Allow form submission
+                        document.getElementById('updateBtnContainer').style.display = 'flex';
+                    } else {
+                        // Display error message
+                        alert('Incorrect OTP. Please enter the correct OTP.');
+                        // Optionally, you can clear the entered OTP field if needed
+                        // document.getElementById('otp').value = '';
+                    }
+                }
+            </script>
 
 
 
-        </div>
-    </div>
-</body>
-<?php
+            <?php
+            include_once("config/config.php");
 
-include_once("config/config.php");
 
-// Check if the form is submitted
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Retrieve data from the form for service 1
-    $service_name_1 = mysqli_real_escape_string($conn, $_POST['service_name_1']);
-    $service_description_1 = mysqli_real_escape_string($conn, $_POST['service_description_1']);
-    $price_range_1 = mysqli_real_escape_string($conn, $_POST['price_range_1']);
+            // Check if the form is submitted
+            if ($_SERVER["REQUEST_METHOD"] == "POST") {
+                // Retrieve data from the form for service 1
+                $service_name_1 = mysqli_real_escape_string($conn, $_POST['service_name_1']);
+                $service_description_1 = mysqli_real_escape_string($conn, $_POST['service_description_1']);
+                $price_range_1 = mysqli_real_escape_string($conn, $_POST['price_range_1']);
 
-    // Retrieve data from the form for service 2
-    $service_name_2 = mysqli_real_escape_string($conn, $_POST['service_name_2']);
-    $service_description_2 = mysqli_real_escape_string($conn, $_POST['service_description_2']);
-    $price_range_2 = mysqli_real_escape_string($conn, $_POST['price_range_2']);
+                // Retrieve data from the form for service 2
+                $service_name_2 = mysqli_real_escape_string($conn, $_POST['service_name_2']);
+                $service_description_2 = mysqli_real_escape_string($conn, $_POST['service_description_2']);
+                $price_range_2 = mysqli_real_escape_string($conn, $_POST['price_range_2']);
 
-    // Retrieve data from the form for service 3
-    $service_name_3 = mysqli_real_escape_string($conn, $_POST['service_name_3']);
-    $service_description_3 = mysqli_real_escape_string($conn, $_POST['service_description_3']);
-    $price_range_3 = mysqli_real_escape_string($conn, $_POST['price_range_3']);
+                // Retrieve data from the form for service 3
+                $service_name_3 = mysqli_real_escape_string($conn, $_POST['service_name_3']);
+                $service_description_3 = mysqli_real_escape_string($conn, $_POST['service_description_3']);
+                $price_range_3 = mysqli_real_escape_string($conn, $_POST['price_range_3']);
 
-    $s_id = mysqli_real_escape_string($conn, $_SESSION['user_status']);
+                $s_id = mysqli_real_escape_string($conn, $_SESSION['user_status']);
 
-    // Insert into Services table
-    $sql_services = "INSERT INTO Services (service_name, service_description, price_range) 
-                     VALUES ('$service_name_1', '$service_description_1', '$price_range_1'),
-                            ('$service_name_2', '$service_description_2', '$price_range_2'),
-                            ('$service_name_3', '$service_description_3', '$price_range_3')";
-    mysqli_query($conn, $sql_services);
+                // Insert into Services table
+                $sql_services = "INSERT INTO Services (service_name, service_description, price_range) 
+         VALUES ('$service_name_1', '$service_description_1', '$price_range_1'),
+                ('$service_name_2', '$service_description_2', '$price_range_2'),
+                ('$service_name_3', '$service_description_3', '$price_range_3')";
+                mysqli_query($conn, $sql_services);
 
-    // Get the last inserted service IDs
-    $service_id1 = mysqli_insert_id($conn);
-    $service_id2 = $service_id1 + 1;
-    $service_id3 = $service_id1 + 2;
+                // Get the last inserted service IDs
+                $service_id1 = mysqli_insert_id($conn);
+                $service_id2 = $service_id1 + 1;
+                $service_id3 = $service_id1 + 2;
 
-    // Insert into PricingServices table
-    $sql_pricing_services = "INSERT INTO PricingServices (s_id, service_id1, service_id2, service_id3) 
-                             VALUES ('$s_id', '$service_id1', '$service_id2', '$service_id3')";
-    mysqli_query($conn, $sql_pricing_services);
+                // Insert into PricingServices table
+                $sql_pricing_services = "INSERT INTO PricingServices (s_id, service_id1, service_id2, service_id3) 
+                 VALUES ('$s_id', '$service_id1', '$service_id2', '$service_id3')";
+                mysqli_query($conn, $sql_pricing_services);
 
-    // Close the database connection
-    mysqli_close($conn);
+                // Close the database connection
+                mysqli_close($conn);
 
-    echo "<script>
-                            alert('Congratulations! Your Profile Successfully Created.');
-                            window.location.href = 'congratulation.php';
-                          </script>";
-}
-?>
+
+                
+                echo "<script>
+                alert('Congratulations! Your profile has been created.');
+                window.location.href = 'congratulation.php';
+              </script>";
+                exit;
+            }
+
+            ?>
+
 
 </html>

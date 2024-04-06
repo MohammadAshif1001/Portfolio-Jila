@@ -63,6 +63,19 @@
   <script>
     AOS.init();
   </script>
+  <script>
+    $("form").submit(function () {
+    if ($(this).valid()) {
+        $(this).submit(function () {
+            return false;
+        });
+        return true;
+    }
+    else {
+        return false;
+    }
+});
+</script>
   
 
 </body>

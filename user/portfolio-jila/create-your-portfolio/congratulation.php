@@ -73,6 +73,7 @@ function sendMail($Email, $key, $Name)
 </head>
 
 <body>
+<button onclick="window.location.href = window.location.href"></button>
 
     <?php
     include_once('config/config.php');
@@ -110,6 +111,8 @@ function sendMail($Email, $key, $Name)
             
             if (sendMail($Email, $key, $Name)) {
                 // Redirect the user to the specified URL
+
+                unset($_SESSION['user_status']);
                 echo "<script>
                         alert('Please note your API key: $key');
                         window.location.href = '$host/portfolio-jila/src/?id=$key';
@@ -139,5 +142,10 @@ function sendMail($Email, $key, $Name)
     ?>
 
 </body>
+<script>
+    if(window.history.replaceState){
+        window.history.replaceState(null,null,window.location.href);
+    }
+</script>
 
 </html>
